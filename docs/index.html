@@ -86,7 +86,7 @@
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
             <h1>Measure your water level using <span>Watmonitor webapp</span></h1>
-            <p>Supporting open-source hardware</p>
+            <p>Your IoT within reach</p>
             <div class="d-flex">
               <a href="https://hladinomer.eu/?lang=en" class="btn btn-primary">Watmonitor interface</a>
               <a href="https://www.youtube.com/live/RBksATd0-60" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video </span></a>
@@ -720,7 +720,7 @@ This eliminates the need to know the specific Watmonitor interface address, offe
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Do I need webhosting to run Watmonitor by myself?</h3>
                 <div class="faq-content">
-                  <p>Yes, you will need local or internet webhosting. To execute PHP scripts of Watmonitor, you will need to have Apache / NGINX installed on your server with PHP < 8.</p>
+                  <p>Yes, you will need local or internet webhosting. To execute PHP scripts of Watmonitor, you will need to have Apache / NGINX installed on your server. <strong>Make sure, you are using PHP in version 5.6 up to 7. For PHP version 8, system is NOT compatible.</strong></p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -729,7 +729,7 @@ This eliminates the need to know the specific Watmonitor interface address, offe
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Is it hard to configure the webapplication to make it working?</h3>
                 <div class="faq-content">
-                  <p>There is guide prepared, a .pdf document, understandable for laymen too. By step-by-step solution, you will import .sql file into your MySQL database and you will configure connect.php</p>
+                  <p>A step-by-step guide in .pdf format simplifies setup for all users. It covers importing the .sql file into MySQL, configuring connect.php with database credentials, HTTP Auth data, and the device token.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -758,6 +758,15 @@ Root CA certificate (in case of HTTPS connection) is NOT changed, so you will ne
                 <h3>What language options are included in the Watmonitor webapp?</h3>
                 <div class="faq-content">
                   <p>Watmonitor webapp includes full language translations to English, German, Russian, Spanish, French and Slovak</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Can I log data into other system from Watmonitor?</h3>
+                <div class="faq-content">
+                  <p>Yes, there is JSON output provided from the web interface of Watmonitor that allows you to parse these data and use them in your system (Loxone, Grafana, Kibana, Domoticz, Node-RED, Home Assistant, Thingsboard...). Data provided from the system are the latest data of water level, water volume and time of record written into the database.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
