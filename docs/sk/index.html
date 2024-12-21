@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Watmonitor – hladinomer do studne / nádrže</title>
+<meta name="keywords" content="monitorovanie hladiny vody, monitorovanie vody IoT, webová aplikácia Watmonitor, údaje o vode v reálnom čase, rozhranie snímača vodnej nádrže, ultrazvukový snímač vody, monitorovanie vody ESP32, správa údajov snímača IoT, monitorovanie vody s otvoreným zdrojom, sledovanie objemu studní, riešenia monitorovania priemyselnej vody , monitorovanie vody naprieč platformami, skenovanie snímačom QR kódu, aplikácie IoT s vlastným hosťovaním, vizualizácia údajov o vode, snímače hladiny vody IoT, citlivé rozhranie na monitorovanie vody, monitorovanie vody PHP a MySQL, Monitorovanie hladiny vody Arduino, senzory vody FreeRTOS, vlastnosti a funkčnosť Watmonitor, viacjazyčný systém monitorovania vody, stiahnuteľné grafy hladiny vody">
+<meta name="description" content="Watmonitor je webová aplikácia na monitorovanie hladiny vody v reálnom čase. Senzor agnostický, open-source a multiplatformový s podporou ESP32, grafmi, QR skenovaním a ďalšími!">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://your-iot.github.io/Watmonitor/sk/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="../../sitemap.xml">
+
+<meta property="og:title" content="Watmonitor – hladinomer do studne / nádrže">
+<meta property="og:description" content="Watmonitor je webová aplikácia na monitorovanie hladiny vody v reálnom čase. Senzor agnostický, open-source a multiplatformový s podporou ESP32, grafmi, QR skenovaním a ďalšími!">
+<meta property="og:image" content="https://your-iot.github.io/Watmonitor/assets/img/hero-img.png">
+<meta property="og:url" content="https://your-iot.github.io/Watmonitor/sk/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Watmonitor – hladinomer do studne / nádrže">
+<meta name="twitter:description" content="Watmonitor je webová aplikácia na monitorovanie hladiny vody v reálnom čase. Senzor agnostický, open-source a multiplatformový s podporou ESP32, grafmi, QR skenovaním a ďalšími!">
+<meta name="twitter:image" content="https://your-iot.github.io/Watmonitor/assets/img/hero-img.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Watmonitor",
+  "description": "Univerzálna webová aplikácia na monitorovanie hladiny vody v reálnom čase. Podporuje ESP32, ultrazvukové senzory a viacjazyčné funkcie.",
+  "url": "https://your-iot.github.io/Watmonitor/sk/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Windows, macOS, Android, iOS",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+        <style>
+        #cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        #cookie-bar button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #cookie-bar .agree {
+            background-color: #28a745;
+            color: white;
+        }
+        #cookie-bar .deny {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+  <div id="cookie-bar" style="display: none;">
+        <span>Táto webová stránka používa cookies na analýzu návštevnosti. Pre viac informácií si prečítajte naše <a href="/cookie-policy.html" target="_blank">Cookie Policy</a>. Súhlasíte?</span>
+        <div>
+            <button class="agree" onclick="acceptCookies()">Súhlasím</button>
+            <button class="deny" onclick="denyCookies()">Nesúhlasím</button>
+        </div>
+    </div>
+
+    <script>
+        // Check cookie consent status
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookie-consent2');
+            if (consent === 'agree') {
+                loadSmartlook();
+            } else if (consent === null) {
+                document.getElementById('cookie-bar').style.display = 'flex';
+            }
+        }
+
+        // Function to load Smartlook
+        function loadSmartlook() {
+  window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', '44dcd6061489c977265ed1b75eb304243b813bad', { region: 'eu' });
+        }
+
+        // Handle "Agree" action
+        function acceptCookies() {
+            localStorage.setItem('cookie-consent', 'agree');
+            document.getElementById('cookie-bar').style.display = 'none';
+            loadSmartlook();
+        }
+
+        // Handle "Deny" action
+        function denyCookies() {
+            localStorage.setItem('cookie-consent', 'deny');
+            document.getElementById('cookie-bar').style.display = 'none';
+        }
+
+        // Initial check on page load
+        checkCookieConsent();
+    </script>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <h1 class="sitename">Watmonitor od <img src="https://i.imgur.com/ibpLxAB.png" alt="Vaše IoT na dosah" title="Vaše IoT na dosah"> </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Domov</a></li>
+          <li><a href="#about">O produkte</a></li>
+          <li><a href="#features">Vlastnosti</a></li>
+          <li><a href="#gallery">Galéria</a></li>
+<a href="pt/"><img src="https://i.imgur.com/PPmvgjk.png" alt="Portugal flag.png, 2,2kB" title="Portuguese (Brasil)" height="32" width="32"></a>
+<a href="hi/"><img src="https://i.imgur.com/YjoqRN1.png" alt="Hindi flag.png, 2,2kB" title="Hindi" height="32" width="32"></a>
+<a href="ar/"><img src="https://i.imgur.com/7PlY8if.png" alt="Arabic flag.png, 2,2kB" title="Arabic" height="32" width="32"></a>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="../assets/img/hero-bg-2.jpg" alt="Watmonitor" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="../assets/img/hero-img.png" class="img-fluid" alt="Watmonitor's webapp responsive with smartphones, real-time data overview" title="Watmonitor's webapp responsive with smartphones, real-time data overview">
+<!---- class="img-fluid animated"--->
+          </div>
+
+          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h2>Zmerajte si hladinu vody pomocou <span>webovej aplikácie Watmonitor</span></h2>
+            <p>Vaše IoT na dosah</p>
+            <div class="d-flex">
+              <a href="https://hladinomer.eu/" class="btn btn-primary rounded-pill">Vyskúšajte rozhranie Watmonitor</a>
+              <a href="https://www.youtube.com/live/RBksATd0-60" class="btn btn-success rounded-pill">Prehrať video</a>
+              <a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS" class="btn btn-info rounded-pill">Zdrojové kódy senzorový uzol</a>
+              <a href="https://hladinomer.eu/QR/" class="btn btn-danger rounded-pill">Skener QR kódov</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+<h2>O Watmonitor: Univerzálny systém monitorovania hladiny vody</h2>
+<p style="text-align: justify;">
+ <strong>Watmonitor</strong> je pokročilé univerzálne webové rozhranie určené na efektívne ukladanie údajov o hladine vody zozbieraných z uzlov senzorov internetu vecí do centralizovanej databázy. Umožňuje používateľom sledovať v reálnom čase meranie hladiny a objemu vody v studniach, nádržiach alebo iných vodných zdrojoch priamo prostredníctvom používateľsky prívetivého webového rozhrania. Watmonitor je tiež ideálny pre aplikácie na priemyselnej úrovni.
+</p>
+<p style="text-align: justify;">
+ Watmonitor je dostupný na PC aj pre smartfónoch (Android a iOS), zaisťuje bezproblémovú kompatibilitu s rôznymi senzormi bez toho, aby zasahoval do ich funkčnosti. Senzorový uzol môže prenášať buď diferenciálnu hladinu vody alebo skutočné meranie hladiny vody zo dna studne, vďaka čomu je veľmi všestranný.
+</p>
+<p style="text-align: justify;">
+ <strong>Beží na PHP, HTML5, Bootstrap, MySQL a ďalšími knižnicami, ako sú JustGage (Raphaël), ApexCharts.js a highlight.js,</strong> Watmonitor poskytuje robustné a škálovateľné riešenie pre potreby monitorovania vody v rôznych sektoroch .
+</p>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-collection-play"></i>
+                  <h3>Scenáre použitia</h3>
+                  <p style="text-align: justify;">Ideálne na nepretržité monitorovanie vody v studniach, nádržiach, žumpách, jazerách, rybníkoch, riekach, nádržiach a kanalizačných systémoch.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-clipboard-check"></i>
+                  <h3>Podporované typy snímačov</h3>
+                  <p style="text-align: justify;">Watmonitor podporuje širokú škálu senzorových technológií vrátane: ultrazvukových, optických, laserových, radarových, kapacitných atď.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-cpu-fill"></i>
+                  <h3><a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS">Demo uzol</a></h3>
+                  <p style="text-align: justify;">Pre tých, ktorí skúmajú open-source riešenia, Watmonitor poskytuje príklady zdrojových kódov kompatibilných s populárnymi platformami, ako je ESP32 (WROOM-32, S3, C3, C5, C6) od Espressif Systems.
+Tieto príklady demonštrujú použitie ultrazvukových snímačov vzdialenosti so signálmi Trigger a Echo (napr. RCW-0001, URM [DFrobot], IOE-SR0X, HC-SR0X, JSN-SR04T, HY-SRF0X, DYP-MEXXX, Parallax PING™) .</p>
+<h5>Ďalšie funkcie:</h5>
+<li><strong>Viaceré prevádzkové režimy:</strong> Podpora aktualizácií OTA (Over-The-Air), režim ULP (Ultra Low Power)</li>
+<li><strong>Konektivita ESP32:</strong> Voliteľné WiFi, až 802.11ax / PHY Ethernet cez RMII</li>
+<li><strong>Pokročilé možnosti jadra a operačného systému:</strong> Arduino Core / Espressif's IoT Development Framework (ESP-IDF) s podporou FreeRTOS</li>      
+ </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi bi-qr-code-scan"></i>
+                  <h3><a href="https://hladinomer.eu/QR/">Skener QR kódov</a></h3>
+                  <p style="text-align: justify;">Zjednodušte monitorovanie v inštaláciách s viacerými snímačmi pomocou funkcie skenovania QR kódu Watmonitor. Ľahko získajte údaje pre akýkoľvek uzol senzora naskenovaním jeho priradeného QR kódu pomocou smartfónu.
+To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka rýchly a spoľahlivý spôsob prístupu k najnovším údajom z akéhokoľvek uzla senzora.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item">
+              <i class="bi bi-currency-exchange" style="color: #ffbb2c;"></i>
+              <h3>Dostupné</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item">
+              <i class="bi bi-pc" style="color: #5578ff;"></i>
+              <h3>Self-hosted</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item">
+              <i class="bi bi-graph-up" style="color: #e80368;"></i>
+              <h3>Grafy na stiahnutie</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-item">
+              <i class="bi bi-cpu" style="color: #e361ff;"></i>
+              <h3>Open source HW priateľský</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="features-item">
+              <i class="bi bi-phone" style="color: #47aeff;"></i>
+              <h3>Responzívne</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="features-item">
+              <i class="bi bi-universal-access" style="color: #ffa76e;"></i>
+              <h3>Viacjazyčná podpora</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="features-item">
+              <i class="bi bi-subtract" style="color: #11dbcf;"></i>
+              <h3>White labeling</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="features-item">
+              <i class="bi bi-info-circle" style="color: #4233ff;"></i>
+              <h3>Podpora a spätná väzba</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+        
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+
+    <!-- Details Section -->
+    <section id="details" class="details section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Detaily</h2>
+        <div><span>Vyskúšajte </span> <span class="description-title">Watmonitor</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="https://i.imgur.com/G27ZaTC.png" class="img-fluid" alt="Overview page of Watmonitor's webapp. Provides real-time data about water level and water volume values, connectivity" title="Overview page of Watmonitor's webapp. Provides real-time data about water level and water volume values, connectivity">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Hlavná stránka (Prehľad)</h3>
+            <p class="fst-italic">
+              Hlavný prehľad o aktuálnom stave dát senzorového uzla Watmonitora, konektivita
+            </p>
+<p>
+ <strong>Hlavná stránka</strong> Watmonitora zobrazuje <strong>údaje o hladine vody v reálnom čase</strong>, <strong>objem</strong> a <strong>trend hodnôt</strong> (rastie / klesá). Zobrazuje tiež <strong>čas záznamu</strong> a <strong>stav pripojenia senzorového uzla</strong>, čím používateľom poskytuje aktuálne informácie na efektívne monitorovanie vody.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="../assets/img/details-2.png" class="img-fluid" alt="Historical measurements within Watmonitor's system. Possible to delete value and also to browse through records or maximum and minimum values per week, month, day" title="Historical measurements within Watmonitor's system. Possible to delete value and also to browse through records or maximum and minimum values per week, month, day">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>Stránky histórie a rekordov</h3>
+            <p class="fst-italic">
+              Celá história dát, min/max záznamov za nastavené časové obdobie
+            </p>
+<p>
+ <strong>Stránka História</strong> vo Watmonitore zobrazuje všetky <strong>merania hladiny vody</strong> vo formáte tabuľky s možnosťou vymazať akýkoľvek záznam. Stránka <strong>Záznamy</strong> zobrazuje minimálne a maximálne hladiny vody za posledných 24 hodín, 7 dní a 30 dní vo forme <strong>vizualizácie merača</strong> pre jednoduché monitorovanie.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="../assets/img/details-3.png" class="img-fluid" alt="Line Area graphs by ApexCharts.js providing water level measurements taken in time with history up to 1 year ago." title="Line Area graphs by ApexCharts.js providing water level measurements taken in time with history up to 1 year ago.">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Čiarové grafy</h3>
+            <p class="fst-italic">
+              Prehľad údajov o vodnej hladine v rôznych časových rámcoch až do 1 roka spätne.
+            </p>
+<p>
+ Stránka <strong>Graf</strong> Watmonitora umožňuje používateľom jednoducho prezerať a analyzovať <strong>údaje o hladine vody v časovom rade</strong>. Používatelia si môžu stiahnuť celý graf alebo konkrétne časti a exportovať údaje vo viacerých formátoch vrátane <strong>.csv</strong>, <strong>.jpg</strong>, <strong>.png</strong> a < strong>.svg</strong> na ďalšiu analýzu a vytváranie prehľadov.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+      
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="../assets/img/details-4.png" class="img-fluid" alt="Automatiaclly pre-generated source code for ESP32 (Espressif Systems) microcontroller with WiFi or PHY Ethernet connection method to the Watmonitor's interface via HTTP or HTTPS" title="Automatiaclly pre-generated source code for ESP32 (Espressif Systems) microcontroller with WiFi or PHY Ethernet connection method to the Watmonitor's interface via HTTP or HTTPS">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>ESP32 program</h3>
+            <p class="fst-italic">
+              Automaticky generovaný zdrojový kód pre ESP32 (Arduino IDE)
+            </p>
+<p>
+ <strong>Stránka programu</strong> poskytuje vopred vygenerovaný <strong>zdrojový kód</strong> pre uzly senzorov internetu vecí založených na platforme <strong>ESP32</strong> s podporou <strong>WiFi</strong> a pripojenie <strong>PHY Ethernet</strong> s <strong>FreeRTOS</strong> v závislosti od zvoleného protokolu (HTTP alebo HTTPS). Systém automaticky nakonfiguruje trasy na nahrávanie údajov do Watmonitor vo vašej doméne. Tento zdrojový kód je kompatibilný s <strong>Arduino Core 3.0.X (2024)</strong>, vďaka čomu sa dá jednoducho integrovať s nastavením monitorovania vody IoT.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="../assets/img/details-5.png" class="img-fluid" alt="Schematics, wiring diagrams for supported IoT microcontrollers used for water level monitoring using ultrasonic sensors, including ESP32, ESP8266 and Arduino" title="Schematics, wiring diagrams for supported IoT microcontrollers used for water level monitoring using ultrasonic sensors, including ESP32, ESP8266 and Arduino">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Schéma zapojenia</h3>
+            <p class="fst-italic">
+              Schémy zapojenia pre všetok podporovaný open-source hardvér
+            </p>
+<p>
+ <strong>Schémy zapojenia</strong> dostupné na tejto stránke sú navrhnuté pre hardvérové ​​platformy s otvoreným zdrojom, ako sú <strong>ESP32</strong>, <strong>ESP8266</strong> a <strong>Arduino</strong >, pričom implementácie programu sú k dispozícii na <strong>GitHub</strong>. K dispozícii sú aj zjednodušené tabuľky mapovania pinov, ktoré pomáhajú netechnickým používateľom ľahko nastaviť hardvér pre ich systém monitorovania vody.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="../assets/img/details-6.png" class="img-fluid" alt="Watmonitor image">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>nastavenia</h3>
+            <p class="fst-italic">
+              Možnosti nastavenia rozmerov studne, jazyka
+            </p>
+<p>
+ Táto stránka umožňuje používateľom zadať <strong>rozmery studne</strong> (hĺbku a priemer) na výpočet <strong>celkovej hladiny vody</strong> a <strong>objemu</strong> studne. Stránka podporuje viacero <strong>jazykových možností</strong> vrátane <strong>angličtiny</strong>, <strong>slovenčiny</strong>, <strong>nemčiny</strong>, <strong>ruštiny</strong> , <strong>francúzština</strong> a <strong>španielčina</strong>, vďaka čomu je prístupná širokému okruhu používateľov.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+
+
+
+
+
+      </div>
+
+    </section><!-- /Details Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Galéria</h2>
+        <div><span>Prezrite si našu</span> <span class="description-title">Galériu</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-1.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-1.JPG" alt="Overview page of water level monitor - Watmonitor. Suitable for real-time water level informations" title="Overview page of water level monitor - Watmonitor. Suitable for real-time water level informations" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-2.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-2.JPG" alt="Watmonitor's History page with water level and water volume measurements" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-3.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-3.JPG" alt="Watmonitor's Gauge graphs showing maximum minimum water level in time period" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-4.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-4.JPG" alt="Watmonitor Area Line graphs showing water level in time period. Powered by ApexCharts" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-5.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-5.JPG" alt="Highlighted source code for ESP32 micontroller with WiFi or PHY Ethernet support" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-6.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-6.JPG" alt="Wiring diagram compatible with ESP32, Arduino, ESP8266. Sensor nodes for Watmonitor webapp" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-7.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-7.JPG" alt="Watmonitor settings page. Optional to set waterwell name, its dimensions of diameter, depth. Language setting." class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-8.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-8.JPG" alt="QR scanner showing the latest data of water level IoT node" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+   
+
+   
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <div class="container-fluid">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span>Často kladené </span><strong>otázky</strong></h3>
+<p>
+ Najčastejšie otázky z komunity zodpovedané nižšie
+ </p>
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="faq-item faq-active">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Potrebujem webhosting na spustenie Watmonitora na mojom vlastnom serveri?</h3>
+<div class="faq-content">
+ <p>Áno, na nezávislé spustenie Watmonitora budete potrebovať lokálny alebo internetový <strong>web hosting</strong>. Ak chcete spustiť <strong>PHP skripty</strong> pre Watmonitor, váš server musí mať nainštalovaný <strong>Apache</strong> alebo <strong>NGINX</strong>. <strong>Uistite sa, že používate PHP verzie 5.6 až 7, pretože Watmonitor nie je kompatibilný s PHP verzie 8.</strong></p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Je ťažké nakonfigurovať webovú aplikáciu pre Watmonitor?</h3>
+<div class="faq-content">
+ <p>Konfigurácia webovej aplikácie pre Watmonitor je jednoduchá vďaka podrobnému <strong>podrobnému sprievodcovi</strong> vo formáte PDF. Táto príručka zjednodušuje proces nastavenia pre všetkých používateľov vrátane pokynov na import <strong>súboru .sql</strong> do <strong>MySQL</strong> a konfiguráciu <strong>connect.php</strong> pomocou vášho <strong >databázové poverenia</strong>, nastavenie údajov <strong>HTTP Auth</strong> a zadanie tokenu zariadenia.</p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Vygeneruje Watmonitor automaticky zdrojový kód pre môj hardvér?</h3>
+<div class="faq-content">
+ <p>Áno, Watmonitor automaticky vygeneruje <strong>náčrty zdrojového kódu</strong> pre váš hardvér vrátane <strong>ESP32</strong> s <strong>WiFi</strong> alebo <strong>PHY Ethernet</strong > pripojenie a podporované <strong>ultrazvukové senzory</strong>. Vygenerované náčrty budú obsahovať potrebný <strong>token MCU</strong>, vypočítajú trasu k cieľovému <strong>súboru PHP</strong> a automaticky pridajú vašu doménu (poznámka: localhost nebude fungovať – uistite sa, že používate prístupná adresa IP alebo názov domény). <strong>Certifikát koreňovej CA</strong> (pre pripojenia HTTPS) nie je upravený, takže ho budete musieť manuálne pridať do náčrtu pre ESP32.
+ </p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Sú k dispozícii ďalšie zdrojové kódy okrem tých v aplikácii Watmonitor?</h3>
+<div class="faq-content">
+ <p>Áno, na <strong>GitHub</strong> je dostupných niekoľko ďalších <strong>zdrojových kódov</strong>, ktoré sú kompatibilné s rozhraním Watmonitor. Patria sem príklady pre <strong>Arduino</strong> s Ethernetom (séria ENC alebo Wiznet), <strong>ESP8266</strong>, <strong>ESP32</strong> a ďalšie prenosové technológie, ako je <strong>LoRaWAN< /strong> a <strong>Sigfox IoT</strong>. K týmto zdrojovým kódom sa dostanete kliknutím na tlačidlo „Príklady uzlov senzorov“ v hornej časti tejto stránky.
+ </p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Aké jazykové možnosti sú dostupné vo webovej aplikácii Watmonitor?</h3>
+<div class="faq-content">
+ <p>Webová aplikácia Watmonitor ponúka úplné <strong>jazykové preklady</strong> pre nasledujúce jazyky: <strong>angličtina</strong>, <strong>nemčina</strong>, <strong>ruština</strong>, <strong>španielčina</strong>, <strong>francúzština</strong> a <strong>slovenčina</strong>, vďaka čomu je prístupná globálnemu publiku.
+ </p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Môžem prihlásiť údaje z Watmonitora do iných systémov?</h3>
+<div class="faq-content">
+ <p>Áno, Watmonitor poskytuje <strong>výstup JSON</strong> prostredníctvom svojho webového rozhrania, čo vám umožňuje jednoducho analyzovať a integrovať údaje do iných systémov. Medzi podporované platformy patria <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Asistent domácnosti</strong>, <strong>Thingsboard</strong> a ďalšie. Údaje zahŕňajú najnovšiu <strong>hladinu vody</strong>, <strong>objem vody</strong> a <strong>čas záznamu</strong> uložené v databáze.
+ </p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="../assets/img/faq.jpg" class="img-fluid" alt="Available source codes for ESP32 Espressif Systems microcontroller for ultrasonic IoT sensor node application" title="Available source codes for ESP32 Espressif Systems microcontroller for ultrasonic IoT sensor node application" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Watmonitor od <img src="https://i.imgur.com/ibpLxAB.png" alt="Your IoT within reach"></span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Slovensko, SK Európa</p>
+            <p><strong>E-mail:</strong> <span>martin.ch.youriot (at) gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.facebook.com/your.iot.systems"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@Your-IoT-w4b"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Zaujímavé odkazy</h4>
+          <ul>
+            <li><a href="https://hladinomer.eu/?lang=en">HTTPS rozhranie Watmonitor</a></li>
+            <li><a href="https://hladinomer.eu/QR/">QR skener pre HTTPS rozhranie</a></li>
+            <hr>
+            <li><a href="http://arduino.clanweb.eu/studna_s_prekladom/?lang=en">HTTP rozhranie Watmonitor</a></li>
+            <li><a href="https://martinius96.github.io/hladinomer-studna-scripty/QR/">QR skener pre HTTP rozhranie</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1mQZHY4OhdbPsJh4F_glSt76WrMBs0OXaEamcr9UgX0c/edit?usp=sharing">Watmonitor MANUAL</a></li>
+            <li><a href="https://docs.google.com/document/d/1zAu9cUEIuZDsCeosv0WeXM5LSUqyt1YhWdWjVYwEpFw/edit?usp=sharing">ESP32 senzorový uzol MANUAL</a></li>
+            <li><a href="https://docs.google.com/document/d/1fGL3cXbddahzq-Gaxa7e43Aqvpis8rck7bwe7MO2YYY/edit?usp=sharing">Skener QR kódov MANUAL</a></li>
+            <li><a href="https://github.com/martinius96/hladinomer-studna-scripty/blob/master/Postman/Dashboard_WaterWell_Monitor.postman_collection">Postman kolekcia, API testing</a></li>           
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Iné projekty</h4>
+          <ul>
+            <li><a href="https://your-iot.github.io/DOMINATOR/">RFID DOMINATOR</a></li>
+            <li><a href="https://martinius96.github.io/WiFi-termostat/">WiFi Termostat</a></li>         
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Bootslander</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
