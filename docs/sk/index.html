@@ -570,7 +570,7 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
             <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
               <h3><span>Často kladené </span><strong>otázky</strong></h3>
 <p>
- Najčastejšie otázky z komunity zodpovedané nižšie
+ Najčastejšie otázky k Watmonitoru zodpovedané nižšie
  </p>
             </div>
 
@@ -580,7 +580,8 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
                 <i class="faq-icon bi bi-question-circle"></i>
 <h3>Potrebujem webhosting na spustenie Watmonitora na mojom vlastnom serveri?</h3>
 <div class="faq-content">
- <p>Áno, na nezávislé spustenie Watmonitora budete potrebovať lokálny alebo internetový <strong>web hosting</strong>. Ak chcete spustiť <strong>PHP skripty</strong> pre Watmonitor, váš server musí mať nainštalovaný <strong>Apache</strong> alebo <strong>NGINX</strong>. <strong>Uistite sa, že používate PHP verzie 5.6 až 7, pretože Watmonitor nie je kompatibilný s PHP verzie 8.</strong></p>
+ <p>Áno, na spustenie Watmonitora budete potrebovať lokálny alebo internetový <strong>web hosting</strong>. 
+Pre možnosť spúšťania <strong>PHP skriptov</strong> pre Watmonitor, musí server mať nainštalovaný balík <strong>Apache / HTTPD</strong> alebo <strong>NGINX</strong>. <strong>Uistite sa, že používate PHP verzie 5.6 až 7, pretože Watmonitor nie je kompatibilný s PHP verzie 8.</strong></p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
@@ -590,7 +591,7 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Je ťažké nakonfigurovať webovú aplikáciu pre Watmonitor?</h3>
 <div class="faq-content">
- <p>Konfigurácia webovej aplikácie pre Watmonitor je jednoduchá vďaka podrobnému <strong>podrobnému sprievodcovi</strong> vo formáte PDF. Táto príručka zjednodušuje proces nastavenia pre všetkých používateľov vrátane pokynov na import <strong>súboru .sql</strong> do <strong>MySQL</strong> a konfiguráciu <strong>connect.php</strong> pomocou vášho <strong >databázové poverenia</strong>, nastavenie údajov <strong>HTTP Auth</strong> a zadanie tokenu zariadenia.</p>
+ <p>Konfigurácia webovej aplikácie pre Watmonitor je jednoduchá vďaka <strong>manuálu</strong> vo formáte PDF. Táto príručka krok po kroku popisuje proces nastavenia pre import <strong>súboru .sql</strong> do <strong>MySQL / MariaDB databázy</strong>, konfiguráciu <strong>súboru connect.php</strong> pre pripojenia na databázu a nastavenie <strong>HTTP Auth</strong>, tokenu zariadenia.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
@@ -600,7 +601,7 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Vygeneruje Watmonitor automaticky zdrojový kód pre môj hardvér?</h3>
 <div class="faq-content">
- <p>Áno, Watmonitor automaticky vygeneruje <strong>náčrty zdrojového kódu</strong> pre váš hardvér vrátane <strong>ESP32</strong> s <strong>WiFi</strong> alebo <strong>PHY Ethernet</strong > pripojenie a podporované <strong>ultrazvukové senzory</strong>. Vygenerované náčrty budú obsahovať potrebný <strong>token MCU</strong>, vypočítajú trasu k cieľovému <strong>súboru PHP</strong> a automaticky pridajú vašu doménu (poznámka: localhost nebude fungovať – uistite sa, že používate prístupná adresa IP alebo názov domény). <strong>Certifikát koreňovej CA</strong> (pre pripojenia HTTPS) nie je upravený, takže ho budete musieť manuálne pridať do náčrtu pre ESP32.
+ <p>Áno, Watmonitor automaticky vygeneruje <strong>sketch</strong> pre <strong>ESP32</strong> s <strong>WiFi</strong> alebo <strong>PHY Ethernet LAN8720</strong > pripojenie a podporované <strong>ultrazvukové senzory</strong>. Vygenerované sketche budú obsahovať potrebný <strong>token MCU</strong>, vypočítajú trace k cieľovému <strong>súboru PHP</strong> a automaticky pridajú vašu doménu (poznámka: localhost nebude fungovať – uistite sa, že používate prístupná adresa IP alebo názov domény). <strong>Certifikát koreňovej CA</strong> (pre pripojenia HTTPS) nie je automaticky vygenerovaný, takže ho budete musieť manuálne pridať do sketchu pre ESP32.
  </p>
 </div>
 
@@ -609,9 +610,9 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Sú k dispozícii ďalšie zdrojové kódy okrem tých v aplikácii Watmonitor?</h3>
+<h3>Existujú ďalšie sketche pre ESP32, Arduino?</h3>
 <div class="faq-content">
- <p>Áno, na <strong>GitHub</strong> je dostupných niekoľko ďalších <strong>zdrojových kódov</strong>, ktoré sú kompatibilné s rozhraním Watmonitor. Patria sem príklady pre <strong>Arduino</strong> s Ethernetom (séria ENC alebo Wiznet), <strong>ESP8266</strong>, <strong>ESP32</strong> a ďalšie prenosové technológie, ako je <strong>LoRaWAN< /strong> a <strong>Sigfox IoT</strong>. K týmto zdrojovým kódom sa dostanete kliknutím na tlačidlo „Príklady uzlov senzorov“ v hornej časti tejto stránky.
+ <p>Áno, na <strong>GitHube</strong> sú aj iné <strong>sketche</strong>, ktoré sú kompatibilné s rozhraním Watmonitor. Patria sem sketche pre <strong>Arduino</strong> s Ethernetom (séria ENC alebo Wiznet), <strong>ESP8266</strong>, <strong>ESP32</strong> a ďalšie prenosové technológie, ako je <strong>LoRaWAN< /strong> a <strong>Sigfox IoT</strong>. K týmto zdrojovým kódom sa dostanete kliknutím na tlačidlo „Zdrojové kódy senzorový uzol“ v hornej časti tejto stránky.
  </p>
 </div>
 
@@ -620,9 +621,9 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Aké jazykové možnosti sú dostupné vo webovej aplikácii Watmonitor?</h3>
+<h3>Aké jazykové mutácie obsahu Watmonitor?</h3>
 <div class="faq-content">
- <p>Webová aplikácia Watmonitor ponúka úplné <strong>jazykové preklady</strong> pre nasledujúce jazyky: <strong>angličtina</strong>, <strong>nemčina</strong>, <strong>ruština</strong>, <strong>španielčina</strong>, <strong>francúzština</strong> a <strong>slovenčina</strong>, vďaka čomu je prístupná globálnemu publiku.
+ <p>Webová aplikácia Watmonitor podporuje <strong>jazykové preklady</strong> pre nasledujúce jazyky: <strong>angličtina</strong>, <strong>nemčina</strong>, <strong>ruština</strong>, <strong>španielčina</strong>, <strong>francúzština</strong> a <strong>slovenčina</strong>, vďaka čomu je dostupná globálne.
  </p>
 </div>
 
@@ -631,9 +632,9 @@ Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <stron
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Môžem prihlásiť údaje z Watmonitora do iných systémov?</h3>
+<h3>Môžem prenášať dáta z Watmonitora do iných systémov?</h3>
 <div class="faq-content">
- <p>Áno, Watmonitor poskytuje <strong>výstup JSON</strong> prostredníctvom svojho webového rozhrania, čo vám umožňuje jednoducho analyzovať a integrovať údaje do iných systémov. Medzi podporované platformy patria <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Asistent domácnosti</strong>, <strong>Thingsboard</strong> a ďalšie. Údaje zahŕňajú najnovšiu <strong>hladinu vody</strong>, <strong>objem vody</strong> a <strong>čas záznamu</strong> uložené v databáze.
+ <p>Áno, Watmonitor poskytuje <strong>výstup JSON</strong> prostredníctvom svojho webového rozhrania, čo umožňnuje stiahnutie a deserializáciu týchto dát pre ďalšiu integráciu do 3rd party systémov. Medzi najznámejšie patria <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong> a ďalšie. Údaje zahŕňajú posledné známe dáta o <strong>hladine a objeme vody</strong>, <strong>čas záznamu</strong> z SQL databázy.
  </p>
 </div>
 
