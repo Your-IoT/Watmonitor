@@ -150,9 +150,10 @@
           <li><a href="#about">O produkte</a></li>
           <li><a href="#features">Vlastnosti</a></li>
           <li><a href="#gallery">Galéria</a></li>
-<a href="pt/"><img src="https://i.imgur.com/PPmvgjk.png" alt="Portugal flag.png, 2,2kB" title="Portuguese (Brasil)" height="32" width="32"></a>
-<a href="hi/"><img src="https://i.imgur.com/YjoqRN1.png" alt="Hindi flag.png, 2,2kB" title="Hindi" height="32" width="32"></a>
-<a href="ar/"><img src="https://i.imgur.com/7PlY8if.png" alt="Arabic flag.png, 2,2kB" title="Arabic" height="32" width="32"></a>
+<a href="../"><img src="https://i.imgur.com/q5dsgvd.png" alt="England flag.png, 2,2kB" title="English" height="32" width="32"></a>
+<a href="../pt"><img src="https://i.imgur.com/PPmvgjk.png" alt="Portugal flag.png, 2,2kB" title="Portuguese (Brasil)" height="32" width="32"></a>
+<a href="../hi"><img src="https://i.imgur.com/YjoqRN1.png" alt="Hindi flag.png, 2,2kB" title="Hindi" height="32" width="32"></a>
+<a href="../ar"><img src="https://i.imgur.com/7PlY8if.png" alt="Arabic flag.png, 2,2kB" title="Arabic" height="32" width="32"></a>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -211,15 +212,19 @@
         <div class="row align-items-xl-center gy-5">
 
           <div class="col-xl-5 content">
-<h2>O Watmonitor: Univerzálny systém monitorovania hladiny vody</h2>
+<h2>Watmonitor: Univerzálny systém monitorovania hladiny vody</h2>
 <p style="text-align: justify;">
- <strong>Watmonitor</strong> je pokročilé univerzálne webové rozhranie určené na efektívne ukladanie údajov o hladine vody zozbieraných z uzlov senzorov internetu vecí do centralizovanej databázy. Umožňuje používateľom sledovať v reálnom čase meranie hladiny a objemu vody v studniach, nádržiach alebo iných vodných zdrojoch priamo prostredníctvom používateľsky prívetivého webového rozhrania. Watmonitor je tiež ideálny pre aplikácie na priemyselnej úrovni.
+ <strong>Watmonitor</strong> je webové rozhranie určené na záznam údajov o hladine vody zozbieraných z IoT senzorových uzlov do centralizovanej databázy. 
+Umožňuje používateľom sledovať v reálnom čase aktuálnu výšku hladiny a objemu vody v studniach, nádržiach alebo iných vodných zdrojoch priamo prostredníctvom webového rozhrania. 
+Watmonitor je tiež ideálny pre aplikácie na priemyselnej úrovni s využitím aj pre monitorovanie výšky iných veličín.
 </p>
 <p style="text-align: justify;">
- Watmonitor je dostupný na PC aj pre smartfónoch (Android a iOS), zaisťuje bezproblémovú kompatibilitu s rôznymi senzormi bez toho, aby zasahoval do ich funkčnosti. Senzorový uzol môže prenášať buď diferenciálnu hladinu vody alebo skutočné meranie hladiny vody zo dna studne, vďaka čomu je veľmi všestranný.
+ Watmonitor je dostupný pre širokú škálu zariadení (PC Windows, Linux, Android a iOS) a dokáže sa plne prispôsobiť ich rozlíšeniu. 
+Webové rozhranie je využiteľné s akýmkoľvek senzorom záznamu rozdielovej, alebo celkovej výšky hladiny vody. 
 </p>
 <p style="text-align: justify;">
- <strong>Beží na PHP, HTML5, Bootstrap, MySQL a ďalšími knižnicami, ako sú JustGage (Raphaël), ApexCharts.js a highlight.js,</strong> Watmonitor poskytuje robustné a škálovateľné riešenie pre potreby monitorovania vody v rôznych sektoroch .
+ <strong>Webaplikácia beží na na PHP, HTML5, Bootstrap šablóne Bare. Súčasťou toho sú aj knižnice JustGage (Raphaël), ApexCharts.js a highlight.js.
+Dáta sú uložené v MySQL, alebo MariaDB databáze.</strong> Watmonitor poskytuje robustné a škálovateľné riešenie pre potreby monitorovania v rôznych oblastiach.
 </p>
           </div>
 
@@ -229,7 +234,7 @@
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
                   <i class="bi bi-collection-play"></i>
-                  <h3>Scenáre použitia</h3>
+                  <h3>Prípadové štúdie</h3>
                   <p style="text-align: justify;">Ideálne na nepretržité monitorovanie vody v studniach, nádržiach, žumpách, jazerách, rybníkoch, riekach, nádržiach a kanalizačných systémoch.</p>
                 </div>
               </div> <!-- End Icon Box -->
@@ -237,8 +242,8 @@
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
-                  <h3>Podporované typy snímačov</h3>
-                  <p style="text-align: justify;">Watmonitor podporuje širokú škálu senzorových technológií vrátane: ultrazvukových, optických, laserových, radarových, kapacitných atď.</p>
+                  <h3>Podporované senzory</h3>
+                  <p style="text-align: justify;">Watmonitor podporuje širokú škálu senzorových technológií vrátane: ultrazvukových, optických, laserových, radarových, kapacitných a iné..</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -249,9 +254,9 @@
                   <p style="text-align: justify;">Pre tých, ktorí skúmajú open-source riešenia, Watmonitor poskytuje príklady zdrojových kódov kompatibilných s populárnymi platformami, ako je ESP32 (WROOM-32, S3, C3, C5, C6) od Espressif Systems.
 Tieto príklady demonštrujú použitie ultrazvukových snímačov vzdialenosti so signálmi Trigger a Echo (napr. RCW-0001, URM [DFrobot], IOE-SR0X, HC-SR0X, JSN-SR04T, HY-SRF0X, DYP-MEXXX, Parallax PING™) .</p>
 <h5>Ďalšie funkcie:</h5>
-<li><strong>Viaceré prevádzkové režimy:</strong> Podpora aktualizácií OTA (Over-The-Air), režim ULP (Ultra Low Power)</li>
-<li><strong>Konektivita ESP32:</strong> Voliteľné WiFi, až 802.11ax / PHY Ethernet cez RMII</li>
-<li><strong>Pokročilé možnosti jadra a operačného systému:</strong> Arduino Core / Espressif's IoT Development Framework (ESP-IDF) s podporou FreeRTOS</li>      
+<li><strong>Viaceré prevádzkové režimy:</strong> Podpora aktualizácií OTA (Over-The-Air), režim ULP (Ultra Low Power) pre ESP32 a ESP8266</li>
+<li><strong>Konektivita ESP32:</strong> Voliteľné WiFi4 až WiFi6, až 802.11ax / PHY Ethernet cez RMII</li>
+<li><strong>Jadro a OS:</strong> Arduino Core / Espressif's IoT Development Framework (ESP-IDF) s podporou FreeRTOS</li>      
  </div>
               </div> <!-- End Icon Box -->
 
@@ -259,8 +264,10 @@ Tieto príklady demonštrujú použitie ultrazvukových snímačov vzdialenosti 
                 <div class="icon-box">
                   <i class="bi bi bi-qr-code-scan"></i>
                   <h3><a href="https://hladinomer.eu/QR/">Skener QR kódov</a></h3>
-                  <p style="text-align: justify;">Zjednodušte monitorovanie v inštaláciách s viacerými snímačmi pomocou funkcie skenovania QR kódu Watmonitor. Ľahko získajte údaje pre akýkoľvek uzol senzora naskenovaním jeho priradeného QR kódu pomocou smartfónu.
-To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka rýchly a spoľahlivý spôsob prístupu k najnovším údajom z akéhokoľvek uzla senzora.</p>
+                  <p style="text-align: justify;">Zjednodušte vizualizáciu dát priamo z hardvéru s funkciou skenovania QR kódu. 
+Prostredníctvom naskenovania QR kódu sa zobrazia posledné zaznamenané dáta konkrétneho hardvéru, ku ktorému je QR kód priradený.
+Vhodné do inštalácii s viacerými Watmonitor rozhraniami.
+</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -364,7 +371,7 @@ To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka 
               Hlavný prehľad o aktuálnom stave dát senzorového uzla Watmonitora, konektivita
             </p>
 <p>
- <strong>Hlavná stránka</strong> Watmonitora zobrazuje <strong>údaje o hladine vody v reálnom čase</strong>, <strong>objem</strong> a <strong>trend hodnôt</strong> (rastie / klesá). Zobrazuje tiež <strong>čas záznamu</strong> a <strong>stav pripojenia senzorového uzla</strong>, čím používateľom poskytuje aktuálne informácie na efektívne monitorovanie vody.
+ <strong>Hlavná stránka</strong> Watmonitora zobrazuje <strong>údaje o hladine a objeme vody v reálnom čase</strong>. Zobrazuje tendenciu meraní a tiež <strong>čas záznamu</strong> a <strong>stav pripojenia senzorového uzla</strong>, čím používateľom poskytuje aktuálny prehľad aktivity senzora a on-line stavu.
 </p>
 
           </div>
@@ -377,10 +384,11 @@ To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka 
           <div class="col-md-7" data-aos="fade-up">
             <h3>Stránky histórie a rekordov</h3>
             <p class="fst-italic">
-              Celá história dát, min/max záznamov za nastavené časové obdobie
+              Kompletná história dát, min/max záznamov za nastavené časové obdobie
             </p>
 <p>
- <strong>Stránka História</strong> vo Watmonitore zobrazuje všetky <strong>merania hladiny vody</strong> vo formáte tabuľky s možnosťou vymazať akýkoľvek záznam. Stránka <strong>Záznamy</strong> zobrazuje minimálne a maximálne hladiny vody za posledných 24 hodín, 7 dní a 30 dní vo forme <strong>vizualizácie merača</strong> pre jednoduché monitorovanie.
+ <strong>Stránka História</strong> vo Watmonitore zobrazuje všetky <strong>merania hladiny vody</strong> vo formáte tabuľky s možnosťou vymazať akýkoľvek záznam. 
+Stránka <strong>Záznamy</strong> zobrazuje minimálne a maximálne hladiny vody za posledných 24 hodín, 7 dní a 30 dní vo forme <strong>Gauge grafu</strong> pre jednoduchú vizualizáciu.
 </p>
 
           </div>
@@ -396,7 +404,8 @@ To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka 
               Prehľad údajov o vodnej hladine v rôznych časových rámcoch až do 1 roka spätne.
             </p>
 <p>
- Stránka <strong>Graf</strong> Watmonitora umožňuje používateľom jednoducho prezerať a analyzovať <strong>údaje o hladine vody v časovom rade</strong>. Používatelia si môžu stiahnuť celý graf alebo konkrétne časti a exportovať údaje vo viacerých formátoch vrátane <strong>.csv</strong>, <strong>.jpg</strong>, <strong>.png</strong> a < strong>.svg</strong> na ďalšiu analýzu a vytváranie prehľadov.
+ <strong>Grafy</strong> Watmonitora umožňujú používateľovi zobraziť a podrobne analyzovať výšku hladiny vody v časovom horizonte.
+Používateľ si môže priblížiť ľubovoľnú časovú oblasť a exportovať túto oblasť, alebo celý graf vo formátoch <strong>.csv</strong>, <strong>.png</strong> a < strong>.svg</strong> na ďalšiu analýzu napr. v MATLABE / Exceli a vytváranie prehľadov výkonnosti vodného zdroja.
 </p>
 
           </div>
@@ -412,7 +421,8 @@ To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka 
               Automaticky generovaný zdrojový kód pre ESP32 (Arduino IDE)
             </p>
 <p>
- <strong>Stránka programu</strong> poskytuje vopred vygenerovaný <strong>zdrojový kód</strong> pre uzly senzorov internetu vecí založených na platforme <strong>ESP32</strong> s podporou <strong>WiFi</strong> a pripojenie <strong>PHY Ethernet</strong> s <strong>FreeRTOS</strong> v závislosti od zvoleného protokolu (HTTP alebo HTTPS). Systém automaticky nakonfiguruje trasy na nahrávanie údajov do Watmonitor vo vašej doméne. Tento zdrojový kód je kompatibilný s <strong>Arduino Core 3.0.X (2024)</strong>, vďaka čomu sa dá jednoducho integrovať s nastavením monitorovania vody IoT.
+ <strong>Stránka programu</strong> poskytuje vopred vygenerovaný <strong>zdrojový kód (sketch)</strong> pre IoT senzorový uzol <strong>ESP32</strong> s podporou <strong>WiFi</strong> a <strong>PHY Ethernet LAN8720</strong> s <strong>FreeRTOS</strong> v závislosti od zvoleného protokolu (HTTP alebo HTTPS). 
+Systém automaticky nakonfiguruje trasy na nahrávanie údajov do Watmonitor vo vašej doméne. Tento zdrojový kód je kompatibilný s <strong>Arduino Core 3.0.X (2024)</strong>, umožňuje jednoduchú integráciu do zariadenia.
 </p>
 
           </div>
@@ -425,10 +435,10 @@ To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka 
           <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
             <h3>Schéma zapojenia</h3>
             <p class="fst-italic">
-              Schémy zapojenia pre všetok podporovaný open-source hardvér
+              Schéma zapojenia podporovaného IoT open-source hardvéru
             </p>
 <p>
- <strong>Schémy zapojenia</strong> dostupné na tejto stránke sú navrhnuté pre hardvérové ​​platformy s otvoreným zdrojom, ako sú <strong>ESP32</strong>, <strong>ESP8266</strong> a <strong>Arduino</strong >, pričom implementácie programu sú k dispozícii na <strong>GitHub</strong>. K dispozícii sú aj zjednodušené tabuľky mapovania pinov, ktoré pomáhajú netechnickým používateľom ľahko nastaviť hardvér pre ich systém monitorovania vody.
+ <strong>Schéma zapojenia</strong> dostupná na tejto stránke je navrhnutá pre IoT open-source hardvér, ako je <strong>ESP32</strong>, <strong>ESP8266</strong> a <strong>Arduino</strong >, pričom implementácie programu sú k dispozícii na <strong>GitHube</strong>. K dispozícii sú aj zjednodušené tabuľky mapovania pinov, ktoré pomáhajú laikom ľahšie pripojiť hardvér k mikrokontroléru IoT senzorového uzla.
 </p>
 
           </div>
@@ -439,12 +449,13 @@ To eliminuje potrebu poznať špecifickú adresu rozhrania Watmonitor a ponúka 
             <img src="../assets/img/details-6.png" class="img-fluid" alt="Watmonitor image">
           </div>
           <div class="col-md-7" data-aos="fade-up">
-            <h3>nastavenia</h3>
+            <h3>Nastavenie</h3>
             <p class="fst-italic">
               Možnosti nastavenia rozmerov studne, jazyka
             </p>
 <p>
- Táto stránka umožňuje používateľom zadať <strong>rozmery studne</strong> (hĺbku a priemer) na výpočet <strong>celkovej hladiny vody</strong> a <strong>objemu</strong> studne. Stránka podporuje viacero <strong>jazykových možností</strong> vrátane <strong>angličtiny</strong>, <strong>slovenčiny</strong>, <strong>nemčiny</strong>, <strong>ruštiny</strong> , <strong>francúzština</strong> a <strong>španielčina</strong>, vďaka čomu je prístupná širokému okruhu používateľov.
+ Táto stránka umožňuje používateľom zadať <strong>rozmery studne</strong> (hĺbku a priemer) na výpočet <strong>celkovej hladiny vody</strong> a <strong>objemu</strong> studne. 
+Stránka podporuje viacero <strong>jazykových mutácii</strong> vrátane <strong>angličtiny</strong>, <strong>slovenčiny</strong>, <strong>nemčiny</strong>, <strong>ruštiny</strong> , <strong>francúzština</strong> a <strong>španielčina</strong>, vďaka čomu je prístupná širokému okruhu používateľov.
 </p>
 
           </div>
