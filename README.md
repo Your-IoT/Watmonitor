@@ -33,7 +33,7 @@ The system provides automatic source code generation for ESP32-based sensor node
 
 ## Additional Features:
 - **History & Records Pages**: View detailed records, including min/max values over selected timeframes.
-- **Line Area Graphs**: Analyze water level data across different time series and download graphs in .csv, .jpg, .png, or .svg formats.
+- **Line Area Graphs**: Analyze water level data across different time series and download graphs in .csv, .png, or .svg formats.
 - **Wiring Diagrams**: Simplified wiring diagrams and pin-mapping tables for easy sensor integration.
 
 ## FAQ:
