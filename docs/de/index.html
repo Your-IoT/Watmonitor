@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>IoT-Wasserstandsüberwachungssystem - Watmonitor</title>
+<meta name="keywords" content="Wasserbrunnen, Wasserstandsüberwachung, IoT-Wasserüberwachung, Watmonitor-Webanwendung, Echtzeit-Wasserdaten, Sensorschnittstelle für Wassertanks, Ultraschall-Wassersensor, ESP32-Wasserüberwachung, IoT-Sensordatenverwaltung, Open-Source-Wasserüberwachung, Volumenverfolgung für Wasserbrunnen, industrielle Wasserüberwachungslösungen, plattformübergreifende Wasserüberwachung, QR-Code-Sensorscannen, selbstgehostete IoT-Anwendungen, Wasserdatenvisualisierung, IoT-Wasserstandssensoren, reaktionsschnelle Wasserüberwachungsschnittstelle, PHP- und MySQL-Wasserüberwachung, Arduino-Wasserstandsüberwachung, FreeRTOS-Wassersensoren, Watmonitor-Funktionen und -Funktionalität, mehrsprachiges Wasserüberwachungssystem, herunterladbare Wasserstandsdiagramme">
+<meta name="description" content="What Monitor ist ein IoT-Wasserstandsüberwachungssystem mit Web-App. Ermöglicht die Speicherung von Wasserstandsdaten von Sensor-IoT-Plattformen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://your-iot.github.io/Watmonitor/de/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="../../sitemap.xml">
+
+<meta property="og:title" content="IoT-Wasserstandsüberwachungssystem - Watmonitor">
+<meta property="og:description" content="What Monitor ist ein IoT-Wasserstandsüberwachungssystem mit Web-App. Ermöglicht die Speicherung von Wasserstandsdaten von Sensor-IoT-Plattformen.">
+<meta property="og:image" content="https://your-iot.github.io/Watmonitor/assets/img/hero-img.png">
+<meta property="og:url" content="https://your-iot.github.io/Watmonitor/de/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IoT-Wasserstandsüberwachungssystem - Watmonitor">
+<meta name="twitter:description" content="What Monitor ist ein IoT-Wasserstandsüberwachungssystem mit Web-App. Ermöglicht die Speicherung von Wasserstandsdaten von Sensor-IoT-Plattformen.">
+<meta name="twitter:image" content="https://your-iot.github.io/Watmonitor/assets/img/hero-img.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Watmonitor",
+  "description": "Universelle Webanwendung zur Echtzeitüberwachung des Wasserstands. Unterstützt ESP32, Ultraschallsensoren und mehrsprachige Funktionen.",
+  "url": "https://your-iot.github.io/Watmonitor/de/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Windows, macOS, Android, iOS",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+        <style>
+        #cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        #cookie-bar button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #cookie-bar .agree {
+            background-color: #28a745;
+            color: white;
+        }
+        #cookie-bar .deny {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+  <div id="cookie-bar" style="display: none;">
+        <span>Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern und den Verkehr zu analysieren. Weitere Informationen finden Sie in unserer <a href="/cookie-policy.html" target="_blank">Cookie-Richtlinie</a>. Sind Sie damit einverstanden?</span>
+        <div>
+            <button class="agree" onclick="acceptCookies()">Zustimmen</button>
+            <button class="deny" onclick="denyCookies()">Leugnen</button>
+        </div>
+    </div>
+
+    <script>
+        // Check cookie consent status
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookie-consent2');
+            if (consent === 'agree') {
+                loadSmartlook();
+            } else if (consent === null) {
+                document.getElementById('cookie-bar').style.display = 'flex';
+            }
+        }
+
+        // Function to load Smartlook
+        function loadSmartlook() {
+  window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', '44dcd6061489c977265ed1b75eb304243b813bad', { region: 'eu' });
+        }
+
+        // Handle "Agree" action
+        function acceptCookies() {
+            localStorage.setItem('cookie-consent2', 'agree');
+            document.getElementById('cookie-bar').style.display = 'none';
+            loadSmartlook();
+        }
+
+        // Handle "Deny" action
+        function denyCookies() {
+            localStorage.setItem('cookie-consent2', 'deny');
+            document.getElementById('cookie-bar').style.display = 'none';
+        }
+
+        // Initial check on page load
+        checkCookieConsent();
+    </script>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <h1 class="sitename">Watmonitor von <img src="https://i.imgur.com/ibpLxAB.png" alt="Your IoT within reach" title="Ihr IoT in Reichweite"> </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Heim</a></li>
+<li><a href="#about">Über</a></li>
+<li><a href="#features">Funktionen</a></li>
+<li><a href="#gallery">Galerie</a></li>
+<a href="../"><img src="https://i.imgur.com/q5dsgvd.png" alt="England flag.png, 2,2kB" title="English" height="32" width="32"></a>
+<a href="pt/"><img src="https://i.imgur.com/PPmvgjk.png" alt="Portugal flag.png, 2,2kB" title="Portuguese (Brasil)" height="32" width="32"></a>
+<a href="hi/"><img src="https://i.imgur.com/YjoqRN1.png" alt="Hindi flag.png, 2,2kB" title="Hindi" height="32" width="32"></a>
+<a href="ar/"><img src="https://i.imgur.com/7PlY8if.png" alt="Arabic flag.png, 2,2kB" title="Arabic" height="32" width="32"></a>
+<a href="sk/"><img src="https://i.imgur.com/eKWiNXh.png" alt="Slovak flag.png, 2,2kB" title="Slovakian" height="32" width="32"></a>
+<a href="es/"><img src="https://i.imgur.com/L964ws2.png" alt="Spain flag.png, 2,2kB" title="Spanish" height="32" width="32"></a>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="../assets/img/hero-bg-2.jpg" alt="Watmonitor" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="../assets/img/hero-img.png" class="img-fluid" alt="Watmonitor's webapp responsive with smartphones, real-time data overview" title="Watmonitor's webapp responsive with smartphones, real-time data overview">
+<!---- class="img-fluid animated"--->
+          </div>
+
+          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h2>Überwachen Sie Ihren Wasserstand mit der <span>Watmonitor-Webanwendung</span></h2>
+<p>Ihr IoT in Reichweite</p>
+            <div class="d-flex">
+              <a href="https://hladinomer.eu/?lang=de" class="btn btn-primary rounded-pill">Versuchen Sie es mit der Watmonitor-Schnittstelle</a>
+              <a href="https://www.youtube.com/live/RBksATd0-60" class="btn btn-success rounded-pill">Video ansehen</a>
+              <a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS" class="btn btn-info rounded-pill">Beispiele für Sensorknoten</a>
+              <a href="https://hladinomer.eu/QR/" class="btn btn-danger rounded-pill">QR-Code-Lesegerät</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+<h2>Über Watmonitor: Universelles Wasserstandsüberwachungssystem</h2>
+<p style="text-align: justify;">
+<strong>Watmonitor</strong> ist eine fortschrittliche universelle Weboberfläche, die dazu dient, von IoT-Sensorknoten erfasste Wasserstandsdaten effizient in einer zentralen Datenbank zu speichern. Sie ermöglicht es Benutzern, Wasserstands- und Volumenmessungen ihrer Wasserbrunnen, Tanks oder anderer Wasserquellen direkt über die benutzerfreundliche Weboberfläche in Echtzeit zu überwachen. Watmonitor ist auch ideal für Anwendungen auf Industrieebene.
+</p>
+<p style="text-align: justify;">
+Watmonitor ist sowohl auf dem PC als auch auf Smartphones (Android und iOS) zugänglich und gewährleistet nahtlose Kompatibilität mit einer Vielzahl von Sensoren, ohne deren Funktionalität zu beeinträchtigen. Der Sensorknoten kann entweder den Differenzwasserstand oder die tatsächliche Wasserstandsmessung vom Boden des Brunnens übertragen, was ihn äußerst vielseitig macht.
+</p>
+<p style="text-align: justify;">
+
+<strong>Mit PHP, HTML5, Bootstrap, MySQL und anderen Bibliotheken wie JustGage (Raphaël), ApexCharts.js und highlight.js</strong> bietet Watmonitor eine robuste und skalierbare Lösung für Wasserüberwachungsanforderungen in verschiedenen Sektoren.
+
+</p>
+
+<h2>Hauptfunktionen von Watmonitor</h2>
+<ul>
+
+<li><strong>Echtzeitüberwachung:</strong> Zeigen Sie genaue Daten zu Wasserstand und -volumen in Echtzeit an und erhalten Sie so zeitnahe Einblicke für bessere Entscheidungen.</li>
+
+<li><strong>Plattformübergreifender Zugriff:</strong> Verfügbar auf Desktop- und Mobilgeräten (Android und iOS) und bietet Benutzern die Flexibilität, den Wasserstand jederzeit und überall zu überwachen.</li>
+
+<li><strong>Sensorunabhängig:</strong> Vollständig kompatibel mit einer Vielzahl von Sensoren und industriellen Überwachungssystemen, sodass es an jedes Wasserüberwachungs-Setup angepasst werden kann.</li>
+</ul>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-collection-play"></i>
+                  <h3>Anwendungsszenarien</h3>
+<p style="text-align: justify;">Ideal für die kontinuierliche Wasserüberwachung in Brunnen, Tanks, Sümpfen, Seen, Teichen, Flüssen, Reservoirs und Abwassersystemen.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-clipboard-check"></i>
+<h3>Unterstützte Sensortypen</h3>
+<p style="text-align: justify;">Watmonitor unterstützt eine breite Palette von Sensortechnologien, darunter: Ultraschall, optisch, Laser, Radar, kapazitiv usw.</p>
+</div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-cpu-fill"></i>
+                  <h3><a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS">Demo-Knoten</a></h3>
+<p style="text-align: justify;">Für diejenigen, die Open-Source-Lösungen erkunden, bietet Watmonitor Beispiel-Quellcodes, die mit beliebten Plattformen wie ESP32 (WROOM-32, S3, C3, C5, C6) von Espressif Systems kompatibel sind.
+Diese Beispiele demonstrieren die Verwendung von Ultraschall-Abstandssensoren mit Trigger- und Echosignalen (z. B. RCW-0001, URM [DFrobot], IOE-SR0X, HC-SR0X, JSN-SR04T, HY-SRF0X, DYP-MEXXX, Parallax PING™).</p>
+<h5>Zusätzliche Funktionen:</h5>
+<li><strong>Mehrere Betriebsmodi:</strong> Unterstützung für OTA-Updates (Over-The-Air), ULP-Modus (Ultra Low Power)</li>
+<li><strong>ESP32-Konnektivität:</strong> Optionales WLAN, bis zu 802.11ax / PHY Ethernet über RMII</li>
+<li><strong>Erweiterte Core- und OS-Funktionen:</strong> Arduino Core / Espressifs IoT Development Framework (ESP-IDF) mit FreeRTOS-Unterstützung</li>
+</div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi bi-qr-code-scan"></i>
+                 <h3><a href="https://hladinomer.eu/QR/">QR-Code-Scanner</a></h3>
+<p style="text-align: justify;">Optimieren Sie die Überwachung in Multisensorinstallationen mit der QR-Code-Scanfunktion von Watmonitor. Rufen Sie Daten für jeden Sensorknoten ganz einfach ab, indem Sie den zugewiesenen QR-Code mit einem Smartphone scannen.
+Dadurch ist es nicht mehr nötig, die spezifische Watmonitor-Schnittstellenadresse zu kennen, und Sie haben eine schnelle und zuverlässige Möglichkeit, auf die aktuellsten Daten von jedem Sensorknoten zuzugreifen.</p>
+</div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item">
+              <i class="bi bi-currency-exchange" style="color: #ffbb2c;"></i>
+              <h3>Erschwinglich</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item">
+              <i class="bi bi-pc" style="color: #5578ff;"></i>
+              <h3>Selbst gehostet</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item">
+              <i class="bi bi-graph-up" style="color: #e80368;"></i>
+              <h3>Herunterladbare Grafiken</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-item">
+              <i class="bi bi-cpu" style="color: #e361ff;"></i>
+             <h3>Open-Source-HW-freundlich</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="features-item">
+              <i class="bi bi-phone" style="color: #47aeff;"></i>
+              <h3>Reaktionsschnell</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="features-item">
+              <i class="bi bi-universal-access" style="color: #ffa76e;"></i>
+              <h3>Mehrsprachige Unterstützung</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="features-item">
+              <i class="bi bi-subtract" style="color: #11dbcf;"></i>
+             <h3>Weißes Etikettieren</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="features-item">
+              <i class="bi bi-info-circle" style="color: #4233ff;"></i>
+              <h3>Support und Feedback</h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+        
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+
+    <!-- Details Section -->
+    <section id="details" class="details section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Details</h2>
+<div><span>Überprüfen </span> <span class="description-title">Watmonitor</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="https://i.imgur.com/G27ZaTC.png" class="img-fluid" alt="Overview page of Watmonitor's webapp. Provides real-time data about water level and water volume values, connectivity" title="Overview page of Watmonitor's webapp. Provides real-time data about water level and water volume values, connectivity">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+           <h3>Die Stammseite (Übersicht)</h3>
+<p class="fst-italic">
+Die Hauptübersicht über den aktuellen Status der Sensorknotendaten und Konnektivität von Watmonitor
+</p>
+<p>
+Auf der <strong>Hauptseite</strong> von Watmonitor werden <strong>Echtzeitdaten zum Wasserstand</strong>, <strong>Volumen</strong> und <strong>Trends</strong> (Zunahme/Abnahme) angezeigt. Außerdem werden die <strong>Zeit der Aufzeichnung</strong> und der <strong>Konnektivitätsstatus des Sensorknotens</strong> angezeigt, sodass Benutzer aktuelle Informationen für eine effektive Wasserüberwachung erhalten.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="../assets/img/details-2.png" class="img-fluid" alt="Historical measurements within Watmonitor's system. Possible to delete value and also to browse through records or maximum and minimum values per week, month, day" title="Historical measurements within Watmonitor's system. Possible to delete value and also to browse through records or maximum and minimum values per week, month, day">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+           <h3>Seiten „Verlauf & Aufzeichnungen“</h3>
+<p class="fst-italic">
+Gesamter Datenverlauf, Min.-/Max.-Aufzeichnungen für einen festgelegten Zeitraum
+</p>
+<p>
+Die Seite „Verlauf“ in Watmonitor zeigt alle Wasserstandsmessungen in Tabellenform an, mit der Option, alle Aufzeichnungen zu löschen. Die Seite „Aufzeichnungen“ zeigt die minimalen und maximalen Wasserstände der letzten 24 Stunden, 7 Tage und 30 Tage, dargestellt in einer Messanzeige-Visualisierung zur einfachen Überwachung.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="../assets/img/details-3.png" class="img-fluid" alt="Line Area graphs by ApexCharts.js providing water level measurements taken in time with history up to 1 year ago." title="Line Area graphs by ApexCharts.js providing water level measurements taken in time with history up to 1 year ago.">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+           <h3>Linienflächendiagramme</h3>
+<p class="fst-italic">
+Übersicht über Wasserstandsdaten in verschiedenen Zeitreihen, bis vor einem Jahr.
+</p>
+<p>
+Auf der <strong>Diagrammseite</strong> von Watmonitor können Benutzer <strong>Zeitreihen-Wasserstandsdaten</strong> einfach anzeigen und analysieren. Benutzer können das gesamte Diagramm oder bestimmte Abschnitte herunterladen und die Daten in mehreren Formaten exportieren, darunter <strong>.csv</strong>, <strong>.png</strong> und <strong>.svg</strong>, um sie weiter zu analysieren und zu berichten.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+      
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="../assets/img/details-4.png" class="img-fluid" alt="Automatiaclly pre-generated source code for ESP32 (Espressif Systems) microcontroller with WiFi or PHY Ethernet connection method to the Watmonitor's interface via HTTP or HTTPS" title="Automatiaclly pre-generated source code for ESP32 (Espressif Systems) microcontroller with WiFi or PHY Ethernet connection method to the Watmonitor's interface via HTTP or HTTPS">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+           <h3>ESP32-Programm</h3>
+<p class="fst-italic">
+Automatisch generierter Quellcode für ESP32 (Arduino IDE)
+</p>
+<p>
+Die <strong>Programmseite</strong> bietet vorgenerierten <strong>Quellcode</strong> für IoT-Sensorknoten auf Basis der <strong>ESP32</strong>-Plattform und unterstützt je nach ausgewähltem Protokoll (HTTP oder HTTPS) sowohl <strong>WiFi</strong>- als auch <strong>PHY Ethernet</strong>-Konnektivität mit <strong>FreeRTOS</strong>. Das System konfiguriert automatisch Routen zum Hochladen von Daten zu Watmonitor in Ihrer Domäne. Dieser Quellcode ist mit <strong>Arduino Core 3.0.X (2024)</strong> kompatibel und lässt sich daher problemlos in Ihr IoT-Wasserüberwachungs-Setup integrieren.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="../assets/img/details-5.png" class="img-fluid" alt="Schematics, wiring diagrams for supported IoT microcontrollers used for water level monitoring using ultrasonic sensors, including ESP32, ESP8266 and Arduino" title="Schematics, wiring diagrams for supported IoT microcontrollers used for water level monitoring using ultrasonic sensors, including ESP32, ESP8266 and Arduino">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+           <h3>Schaltplan</h3>
+<p class="fst-italic">
+Schaltpläne für alle unterstützte Open-Source-Hardware
+</p>
+<p>
+Die auf dieser Seite verfügbaren <strong>Schaltpläne</strong> sind für Open-Source-Hardwareplattformen wie <strong>ESP32</strong>, <strong>ESP8266</strong> und <strong>Arduino</strong> konzipiert. Programmimplementierungen sind auf <strong>GitHub</strong> verfügbar. Es werden auch vereinfachte Pin-Mapping-Tabellen bereitgestellt, um nicht-technischen Benutzern die einfache Einrichtung der Hardware für ihr Wasserüberwachungssystem zu erleichtern.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="../assets/img/details-6.png" class="img-fluid" alt="Watmonitor image">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+           <h3>Optionen</h3>
+<p class="fst-italic">
+Optionen zum Einstellen der Abmessungen und Sprache des Wasserbrunnens
+</p>
+<p>
+Auf dieser Seite können Benutzer die <strong>Abmessungen des Wasserbrunnens</strong> (Tiefe und Durchmesser) eingeben, um den <strong>Gesamtwasserstand</strong> und das <strong>Volumen</strong> des Brunnens zu berechnen. Die Seite unterstützt mehrere <strong>Sprachoptionen</strong>, darunter <strong>Englisch</strong>, <strong>Slowakisch</strong>, <strong>Deutsch</strong>, <strong>Russisch</strong>, <strong>Französisch</strong> und <strong>Spanisch</strong>, wodurch sie für eine breite Palette von Benutzern zugänglich ist.
+</p>
+
+          </div>
+        </div><!-- Features Item -->
+
+
+
+
+
+
+      </div>
+
+    </section><!-- /Details Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+       <h2>Galerie</h2>
+<div><span>Schauen Sie sich unsere</span> <span class="description-title">Galerie an</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-1.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-1.JPG" alt="Overview page of water level monitor - Watmonitor. Suitable for real-time water level informations" title="Overview page of water level monitor - Watmonitor. Suitable for real-time water level informations" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-2.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-2.JPG" alt="Watmonitor's History page with water level and water volume measurements" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-3.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-3.JPG" alt="Watmonitor's Gauge graphs showing maximum minimum water level in time period" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-4.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-4.JPG" alt="Watmonitor Area Line graphs showing water level in time period. Powered by ApexCharts" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-5.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-5.JPG" alt="Highlighted source code for ESP32 micontroller with WiFi or PHY Ethernet support" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-6.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-6.JPG" alt="Wiring diagram compatible with ESP32, Arduino, ESP8266. Sensor nodes for Watmonitor webapp" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-7.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-7.JPG" alt="Watmonitor settings page. Optional to set waterwell name, its dimensions of diameter, depth. Language setting." class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/gallery-8.JPG" class="glightbox" data-gallery="images-gallery">
+                <img src="../assets/img/gallery/gallery-8.JPG" alt="QR scanner showing the latest data of water level IoT node" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+   
+
+   
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <div class="container-fluid">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span>Häufig gestellte </span><strong>Fragen</strong></h3>
+<p>
+Die am häufigsten gestellten Fragen der Community werden unten beantwortet
+</p>
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="faq-item faq-active">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Benötige ich Webhosting, um Watmonitor auf meinem eigenen Server auszuführen?</h3>
+<div class="faq-content">
+<p>Ja, um Watmonitor unabhängig auszuführen, benötigen Sie entweder lokales oder Internet-<strong>Webhosting</strong>. Um die <strong>PHP-Skripte</strong> für Watmonitor auszuführen, muss auf Ihrem Server <strong>Apache</strong> oder <strong>NGINX</strong> installiert sein. <strong>Stellen Sie sicher, dass Sie PHP Version 5.6 bis 7 verwenden, da Watmonitor nicht mit PHP Version 8 kompatibel ist.</strong></p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+               <h3>Ist es schwierig, die Webanwendung für Watmonitor zu konfigurieren?</h3>
+<div class="faq-content">
+<p>Die Konfiguration der Webanwendung für Watmonitor wird durch eine detaillierte <strong>Schritt-für-Schritt-Anleitung</strong> im PDF-Format vereinfacht. Diese Anleitung vereinfacht den Einrichtungsprozess für alle Benutzer und enthält Anweisungen zum Importieren der <strong>.sql-Datei</strong> in <strong>MySQL</strong>, zum Konfigurieren von <strong>connect.php</strong> mit Ihren <strong>Datenbankanmeldeinformationen</strong>, zum Einrichten von <strong>HTTP-Authentifizierungsdaten</strong> und zum Eingeben des Gerätetokens.</p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+              <h3>Generiert Watmonitor automatisch Quellcode für meine Hardware?</h3>
+<div class="faq-content">
+<p>Ja, Watmonitor generiert automatisch <strong>Quellcode-Skizzen</strong> für Ihre Hardware, einschließlich <strong>ESP32</strong> mit <strong>WiFi</strong>- oder <strong>PHY-Ethernet</strong>-Verbindung und unterstützten <strong>Ultraschallsensoren</strong>. Die generierten Skizzen enthalten das erforderliche <strong>MCU-Token</strong>, berechnen die Ablaufverfolgung zur Ziel-<strong>PHP-Datei</strong> und fügen automatisch Ihre Domäne hinzu (Hinweis: localhost funktioniert nicht – stellen Sie sicher, dass Sie eine zugängliche IP-Adresse oder einen zugänglichen Domänennamen verwenden). Das <strong>Root-CA-Zertifikat</strong> (für HTTPS-Verbindungen) wird nicht geändert, daher müssen Sie es manuell in die Skizze für den ESP32 einfügen.
+</p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+             <h3>Gibt es neben denen in der Watmonitor-App noch weitere Quellcodes?</h3>
+<div class="faq-content">
+<p>Ja, auf <strong>GitHub</strong> sind mehrere weitere <strong>Quellcodes</strong> verfügbar, die mit der Watmonitor-Schnittstelle kompatibel sind. Dazu gehören Beispiele für <strong>Arduino</strong> mit Ethernet (ENC- oder Wiznet-Serie), <strong>ESP8266</strong>, <strong>ESP32</strong> und andere Übertragungstechnologien wie <strong>LoRaWAN</strong> und <strong>Sigfox IoT</strong>. Sie können auf diese Quellcodes zugreifen, indem Sie oben auf dieser Seite auf die Schaltfläche „Beispiele für Sensorknoten“ klicken.
+</p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+              <h3>Welche Sprachoptionen sind in der Watmonitor-Web-App verfügbar?</h3>
+<div class="faq-content">
+<p>Die Watmonitor-Web-App bietet vollständige <strong>Sprachübersetzungen</strong> für die folgenden Sprachen: <strong>Englisch</strong>, <strong>Deutsch</strong>, <strong>Russisch</strong>, <strong>Spanisch</strong>, <strong>Französisch</strong> und <strong>Slowakisch</strong> und ist damit einem weltweiten Publikum zugänglich.
+</p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Kann ich Daten von Watmonitor in andere Systeme protokollieren?</h3>
+<div class="faq-content">
+<p>Ja, Watmonitor bietet <strong>JSON-Ausgabe</strong> über seine Weboberfläche, sodass Sie die Daten problemlos analysieren und in andere Systeme integrieren können. Zu den unterstützten Plattformen gehören <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong> und mehr. Die Daten umfassen den neuesten <strong>Wasserstand</strong>, das <strong>Wasservolumen</strong> und die <strong>Aufzeichnungszeit</strong>, die in der Datenbank gespeichert sind.
+</p>
+</div>
+
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="../assets/img/faq.jpg" class="img-fluid" alt="Available source codes for ESP32 Espressif Systems microcontroller for ultrasonic IoT sensor node application" title="Available source codes for ESP32 Espressif Systems microcontroller for ultrasonic IoT sensor node application" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Watmonitor von <img src="https://i.imgur.com/ibpLxAB.png" alt="Your IoT within reach"></span>
+          </a>
+          <div class="footer-contact pt-3">
+          <p>Slowakei, SK Europa</p>
+<p><strong>E-Mail:</strong> <span>martin.ch.youriot (at) gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.facebook.com/your.iot.systems"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@Your-IoT-w4b"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="https://hladinomer.eu/?lang=de">HTTPS Watmonitor-Schnittstelle</a></li>
+ <li><a href="https://hladinomer.eu/QR/">QR-Scanner für HTTPS-Schnittstelle</a></li>
+ <hr>
+ <li><a href="http://arduino.clanweb.eu/studna_s_prekladom/?lang=de">HTTP-Watmonitor-Schnittstelle</a></li>
+ <li><a href="https://martinius96.github.io/hladinomer-studna-scripty/QR/">QR-Scanner für HTTP-Schnittstelle</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Dokumentation</h4>
+          <ul>
+           <li><a href="https://docs.google.com/document/d/1mQZHY4OhdbPsJh4F_glSt76WrMBs0OXaEamcr9UgX0c/edit?usp=sharing">Watmonitor-HANDBUCH</a></li>
+<li><a href="https://docs.google.com/document/d/1zAu9cUEIuZDsCeosv0WeXM5LSUqyt1YhWdWjVYwEpFw/edit?usp=sharing">ESP32-Sensorknoten-HANDBUCH</a></li>
+<li><a href="https://docs.google.com/document/d/1fGL3cXbddahzq-Gaxa7e43Aqvpis8rck7bwe7MO2YYY/edit?usp=sharing">QR-Code-Scanner-HANDBUCH</a></li>
+<li><a href="https://github.com/martinius96/hladinomer-studna-scripty/blob/master/Postman/Dashboard_WaterWell_Monitor.postman_collection">Postman-Sammlung, API-Test</a></li>        
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Weitere Projekte</h4>
+          <ul>
+<li><a href="https://your-iot.github.io/DOMINATOR/">RFID DOMINATOR</a></li>
+<li><a href="https://martinius96.github.io/WiFi-termostat/de/">WiFi-Thermostat</a></li>
+<li><a href="https://martinius96.github.io/termostat-ethernet/de/">Arduino-Ethernet-Thermostat</a></li>
+<li><a href="https://martinius96.github.io/termostat-ethernet/de/phy_ethernet.html">ESP32 + PHY-Ethernet-Thermostat</a></li>      
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Bootslander</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
