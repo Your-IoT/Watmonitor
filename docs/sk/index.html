@@ -643,6 +643,15 @@ Pre možnosť spúšťania <strong>PHP skriptov</strong> pre Watmonitor, musí s
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Ako prebieha komunikácia medzi serverom a senzorovým uzlom Arduino / ESP32?</h3>
+<div class="faq-content">
+ <p>Senzorový uzol vykonáva periodický rutinu merania hladiny vody každých 5 minút. Následne vykoná request na webserver skrz HTTP, alebo HTTPS protokol POST požiadavkou. Do správy je zapudrená informácia o hladine vody. WEbserver po prijatí správy uloží tieto dáta do MySQL databázy a okamžite ich vie vizualizovať vo webaplikácii hladinomera (Watmonitora). </p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
             </div>
 
           </div>
