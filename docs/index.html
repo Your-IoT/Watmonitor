@@ -639,6 +639,14 @@ This eliminates the need to know the specific Watmonitor interface address, offe
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
+                            <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>How does communication work between the server and the Arduino/ESP32 sensor node?</h3>
+<div class="faq-content">
+ <p>The sensor node performs a periodic routine of measuring the water level every 5 minutes. It then makes a request to the webserver via HTTP or HTTPS protocol with a POST request. The message contains information about the water level. After receiving the message, the webserver saves this data to a MySQL database and can immediately visualize it in the water level meter web application (Watmonitor).</p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
 
             </div>
 
