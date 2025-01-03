@@ -640,6 +640,15 @@ Las preguntas más frecuentes de la comunidad se responden a continuación
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
+                            <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>¿Cómo es la comunicación entre el servidor y el nodo sensor Arduino/ESP32?</h3>
+<div class="faq-content">
+ <p>El nodo sensor realiza una rutina periódica de medición del nivel del agua cada 5 minutos. Luego realiza una solicitud al servidor web a través del protocolo HTTP o HTTPS con una solicitud POST. La información sobre el nivel del agua se incluye en el informe. Después de recibir el mensaje, el servidor WEB almacena estos datos en la base de datos MySQL y puede visualizarlos inmediatamente en la aplicación web del medidor de nivel de agua (Watmonitor).</p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
             </div>
 
           </div>
