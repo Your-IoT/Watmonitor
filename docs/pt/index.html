@@ -640,6 +640,15 @@ Isso elimina a necessidade de saber o endereço específico da interface do Watm
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
+                            <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Como é a comunicação entre o servidor e o nó sensor Arduino/ESP32?</h3>
+<div class="faq-content">
+ <p>O nó sensor realiza uma rotina periódica de medição do nível de água a cada 5 minutos. Em seguida, ele faz uma solicitação ao servidor web por meio do protocolo HTTP ou HTTPS com uma solicitação POST. As informações sobre o nível da água estão espalhadas no relatório. Após receber a mensagem, o WEbserver armazena esses dados no banco de dados MySQL e pode visualizá-los imediatamente no aplicativo web do medidor de nível de água (Watmonitor). </p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
             </div>
 
           </div>
