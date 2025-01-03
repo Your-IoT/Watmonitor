@@ -631,22 +631,35 @@ This eliminates the need to know the specific Watmonitor interface address, offe
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Can I log data from Watmonitor into other systems?</h3>
+<h3>Can I log data from the Watmonitor into other systems?</h3>
 <div class="faq-content">
-  <p>Yes, Watmonitor provides <strong>JSON output</strong> through its web interface, allowing you to easily parse and integrate the data into other systems. Supported platforms include <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong>, and more. The data includes the latest <strong>water level</strong>, <strong>water volume</strong>, and <strong>time of record</strong> stored in the database.
+  <p>Yes, Watmonitor provides <strong>JSON output</strong> through its web interface, allowing you to easily parse and integrate the data into other systems. Supported platforms include <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong>, and more. The data includes the latest <strong>water level</strong>, <strong>water volume</strong>, and <strong>time of record</strong>, all stored in the database.
   </p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
+
                             <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>How does communication work between the server and the Arduino/ESP32 sensor node?</h3>
+<h3>How is communication established between the server and the Arduino/ESP32 sensor node?</h3>
 <div class="faq-content">
  <p>The sensor node performs a periodic routine of measuring the water level every 5 minutes. It then makes a request to the webserver via HTTP or HTTPS protocol with a POST request. The message contains information about the water level. After receiving the message, the webserver saves this data to a MySQL database and can immediately visualize it in the water level meter web application (Watmonitor).</p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
+
+              
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>How is measurement performed by sensor IoT node?</h3>
+<div class="faq-content">
+ <p>A sensor node based on Arduino or ESP32 measures distance using an ultrasonic sensor with the Time-of-Flight method. It sends a HIGH voltage level to the Trigger pin of the ultrasonic sensor for 10 μs. Then, it counts the time until a HIGH voltage level is detected on the Echo pin of the ultrasonic sensor. Based on the speed of sound, the final distance is calculated in centimeters.</p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+
 
             </div>
 
