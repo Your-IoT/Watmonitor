@@ -4,21 +4,21 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>वाटमॉनिटर - IoT अनुप्रयोग के लिए वास्तविक समय जल स्तर निगरानी प्रणाली</title>
+<title>डैशबोर्ड के माध्यम से जल कुँए के जल स्तर की निगरानी</title>
 <meta name="keywords" content="जल स्तर की निगरानी, ​​IoT जल निगरानी, ​​Watmonitor वेब ऐप, वास्तविक समय जल डेटा, जल टैंक सेंसर इंटरफ़ेस, अल्ट्रासोनिक जल सेंसर, ESP32 जल निगरानी, ​​IoT सेंसर डेटा प्रबंधन, ओपन-सोर्स जल निगरानी, ​​जल कुआं मात्रा ट्रैकिंग, औद्योगिक जल निगरानी समाधान, क्रॉस-प्लेटफ़ॉर्म जल निगरानी, ​​QR कोड सेंसर स्कैनिंग, स्व-होस्टेड IoT अनुप्रयोग, जल डेटा विज़ुअलाइज़ेशन, IoT जल स्तर सेंसर, उत्तरदायी जल निगरानी इंटरफ़ेस, PHP और MySQL जल निगरानी, ​​Arduino जल स्तर निगरानी, ​​FreeRTOS जल सेंसर, Watmonitor सुविधाएँ और कार्यक्षमता, बहुभाषी जल निगरानी प्रणाली, डाउनलोड करने योग्य जल स्तर ग्राफ़">
 <meta name="description" content="वाटमॉनीटर वास्तविक समय में जल स्तर की निगरानी के लिए एक वेब ऐप है। सेंसर-अज्ञेय, ओपन-सोर्स, और क्रॉस-प्लेटफ़ॉर्म जिसमें ESP32 समर्थन, ग्राफ़, क्यूआर स्कैनिंग और बहुत कुछ है!">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://your-iot.github.io/Watmonitor/hi/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="../../sitemap.xml">
 
-<meta property="og:title" content="वाटमॉनिटर - IoT अनुप्रयोग के लिए वास्तविक समय जल स्तर निगरानी प्रणाली">
+<meta property="og:title" content="डैशबोर्ड के माध्यम से जल कुँए के जल स्तर की निगरानी">
 <meta property="og:description" content="वाटमॉनीटर वास्तविक समय में जल स्तर की निगरानी के लिए एक वेब ऐप है। सेंसर-अज्ञेय, ओपन-सोर्स, और क्रॉस-प्लेटफ़ॉर्म जिसमें ESP32 समर्थन, ग्राफ़, क्यूआर स्कैनिंग और बहुत कुछ है!">
 <meta property="og:image" content="https://i.imgur.com/Y71LFD3.png">
 <meta property="og:url" content="https://your-iot.github.io/Watmonitor/hi/">
 <meta property="og:type" content="website">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="वाटमॉनिटर - IoT अनुप्रयोग के लिए वास्तविक समय जल स्तर निगरानी प्रणाली">
+<meta name="twitter:title" content="डैशबोर्ड के माध्यम से जल कुँए के जल स्तर की निगरानी">
 <meta name="twitter:description" content="वाटमॉनीटर वास्तविक समय में जल स्तर की निगरानी के लिए एक वेब ऐप है। सेंसर-अज्ञेय, ओपन-सोर्स, और क्रॉस-प्लेटफ़ॉर्म जिसमें ESP32 समर्थन, ग्राफ़, क्यूआर स्कैनिंग और बहुत कुछ है!">
 <meta name="twitter:image" content="https://i.imgur.com/Y71LFD3.png">
 
@@ -644,6 +644,15 @@
 <h3>सर्वर और Arduino/ESP32 सेंसर नोड के बीच संचार कैसा है?</h3>
 <div class="faq-content">
  <p>सेंसर नोड हर 5 मिनट में आवधिक जल स्तर माप प्रक्रिया निष्पादित करता है। इसके बाद यह POST अनुरोध के साथ HTTP या HTTPS प्रोटोकॉल के माध्यम से वेब सर्वर से अनुरोध करता है। रिपोर्ट में जल स्तर की जानकारी अंकित है। संदेश प्राप्त करने के बाद, वेबसर्वर इस डेटा को MySQL डेटाबेस में संग्रहीत करता है और तुरंत इसे जल स्तर मीटर वेब एप्लिकेशन (वॉटमॉनिटर) में देख सकता है।</p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+                            <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>सेंसर IoT नोड द्वारा माप कैसे किया जाता है?</h3>
+<div class="faq-content">
+ <p>Arduino या ESP32 पर आधारित एक सेंसर नोड टाइम-ऑफ़-फ़्लाइट विधि के साथ एक अल्ट्रासोनिक सेंसर का उपयोग करके दूरी मापता है। यह अल्ट्रासोनिक सेंसर के TRIGGER पिन को 10 μs के लिए एक उच्च वोल्टेज स्तर भेजता है। फिर, यह उस समय की गणना करता है जब तक कि अल्ट्रासोनिक सेंसर के ECHO पिन पर एक उच्च वोल्टेज स्तर का पता नहीं चल जाता। ध्वनि की गति के आधार पर, अंतिम दूरी सेंटीमीटर में गणना की जाती है।</p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
