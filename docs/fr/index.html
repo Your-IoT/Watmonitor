@@ -640,6 +640,15 @@ La question la plus fréquemment posée par la communauté est répondue ci-dess
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
+                            <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Comment se passe la communication entre le serveur et le nœud du capteur Arduino/ESP32 ?</h3>
+<div class="faq-content">
+ <p>Le nœud de capteur effectue une routine de mesure périodique du niveau d'eau toutes les 5 minutes. Il fait ensuite une requête au serveur web via le protocole HTTP ou HTTPS avec une requête POST. Des informations sur le niveau d’eau sont dispersées dans le rapport. Après réception du message, le serveur WEb stocke ces données dans la base de données MySQL et peut les visualiser immédiatement dans l'application web du mesureur de niveau d'eau (Watmonitor). </p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
             </div>
 
           </div>
