@@ -644,6 +644,15 @@ Die am häufigsten gestellten Fragen der Community werden unten beantwortet
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
+                            <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Wie ist die Kommunikation zwischen dem Server und dem Arduino / ESP32-Sensorknoten?</h3>
+<div class="faq-content">
+ <p>Der Sensorknoten führt alle 5 Minuten eine periodische Wasserstandsmessung durch. Anschließend stellt er über das HTTP- oder HTTPS-Protokoll mit einer POST-Anfrage eine Anfrage an den Webserver. Informationen zum Wasserstand werden in den Bericht eingestreut. Nach Erhalt der Nachricht speichert der WEbserver diese Daten in der MySQL-Datenbank und kann sie sofort in der Wasserstandsmesser-Webanwendung (Watmonitora) visualisieren. </p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
             </div>
 
           </div>
