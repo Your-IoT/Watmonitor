@@ -217,17 +217,17 @@
           <div class="col-xl-5 content">
 <h2>Watmonitor - webové rozhranie hladiny vody</h2>
 <p style="text-align: justify;">
-Zaznamenáva dáta o výške vodnej hladiny zo senzorových uzlov (Arduino, ESP32). Umožňuje používateľom v reálnom čase sledovať dáta o vodnej hladine a objeme studne, nádrže, tendencii meraní (hladina stúpa / klesá). 
-Používateľ môže prezerať merania aj historicky formou tabuliek, či grafov s možnosťou exportovania pre ďalšiu analýzu 3rd party softvérom (MATLAB, EXCEL), taktiež môže mazať nepotrebné / chybné záznamy meraní.
-Vhodné pre aplikácie do kopaných studní, žúmp, nádrží. Možné použiť aj na monitorovanie sypkých materiálov v skladovací priestoroch ako silá, kontajnery.
+Webaplikácia založená na PHP, HTML5, Bootstrap. Centralizované webové rozhranie umožňuje prijímať údaje o hladine vody z IoT (Internet vecí) senzorového uzla (Arduino, ESP32, ESP8266 alebo vlastný) a ukladať ich do databázy MySQL / MariaDB.
+Umožňuje používateľovi vidieť aktuálne údaje o hladine a objeme vody, tendencii merania a stave pripojenia uzla v reálnom čase.
+Užívateľ môže prechádzať všetkými meraniami v tabuľke s časovou značkou s možnosťou vymazania konkrétneho záznamu. 
+Meranie hladiny vody je možné prezerať aj v čiarových grafoch, kde si užívateľ môže stiahnuť celú alebo užívateľom zvolenú časť grafu na vizualizáciu alebo ďalšiu analýzu v iných softvéroch (MATLAB, EXCEL), napr. vo formáte .csv.
 </p>
 <p style="text-align: justify;">
-Webaplikácia Watmonitora sa dokáže prispôsobiť mobilným, aj desktopovým platformám, je plne responzívna.
-Webové rozhranie je univerzalne a použiteľné s akýmkoľvek senzorom pre záznam rozdielovej (meraná od vrchu), alebo celkovej (meraná od dna) výšky hladiny vody. 
-</p>
-<p style="text-align: justify;">
-<strong>Webaplikácia beží na na PHP, HTML5, Bootstrap šablóne Bare.
-Dáta sú uložené v MySQL, alebo MariaDB databáze.</strong> Watmonitor poskytuje robustné a škálovateľné riešenie pre potreby monitorovania v rôznych oblastiach.
+Webové rozhranie má tiež štatistiku, ktorá zobrazuje maximálne a minimálne meranie hladiny vody za časové obdobie dňa, týždňa, mesiaca v grafe typu Gauge
+Senzorový uzol môže poskytovať hladinu vody v diferenciálnom (od vrchu) alebo celkovom (od dna) meraní.
+Vhodné pre aplikácie v kopaných studniach, žumpách, nádržiach. Možno použiť aj na monitorovanie sypkých materiálov v skladovacích priestoroch, ako sú silá, kontajnery.
+Webová aplikácia je plne responzívna a dostupná pre všetky platformy vrátane smartfónov, počítačov, Smart TV.
+Aplikácia je preložená do angličtiny, nemčiny, francúzštiny, španielčiny, ruštiny a slovenčiny.
 </p>
           </div>
 
