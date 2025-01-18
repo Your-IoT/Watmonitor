@@ -200,7 +200,7 @@ L'application Web est traduite en anglais, allemand, français, espagnol, russe 
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
                  <h3>Types de capteurs pris en charge</h3>
-<p style="text-align: justify;">Watmonitor prend en charge une large gamme de technologies de capteurs, notamment : ultrasons, optiques, laser, radar, capacitifs, etc.</p>
+<p style="text-align: justify;">L'interface Web est universelle. Il ne distingue pas de quel capteur il a obtenu les données. Tout capteur pour lequel vous personnalisez le firmware est pris en charge. Avec une solution industrielle prête à l'emploi, vous configurez un rappel vers l'interface Watmonitor.</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -608,6 +608,15 @@ La question la plus fréquemment posée par la communauté est répondue ci-dess
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
+
+              <div class="faq-item">
+ <i class="faq-icon bi bi-question-circle"></i>
+<h3>À quoi ressemble un rappel sur Watmonitor ?</h3>
+<div class="faq-content">
+ <p>Pour écrire des données sur Watmonitor, vous devez utiliser une requête HTTP (port 80, ou autre s'il s'agit d'un hébergement local) / HTTPS (port 443) méthode POST vers l'hôte cible et le fichier data.php (par exemple https://hladinomer.eu/data.php). Les paramètres du message sont "hodnota" - la hauteur du niveau en centimètres (type de données INT) et "token", qui représente le jeton d'autorisation. Une fois l'inscription réussie, vous recevrez un en-tête HTTP 200 dans la réponse du serveur ainsi qu'une sortie texte OK. Remarque : saisissez les paramètres sans guillemets.</p>
+</div>
+ <i class="faq-toggle bi bi-chevron-right"></i>
+ </div><!-- Fin de l'article FAQ-->
 
             </div>
 
