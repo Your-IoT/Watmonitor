@@ -203,7 +203,7 @@ La aplicación web está traducida al inglés, alemán, francés, español, ruso
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
                  <h3>Tipos de sensores compatibles</h3>
-<p style="text-align: justify;">Watmonitor admite una amplia gama de tecnologías de sensores, entre las que se incluyen: ultrasónicos, ópticos, láser, radar, capacitivos, etc.</p>
+<p style="text-align: justify;">La interfaz web es universal. No distingue de qué sensor obtuvo los datos. Se admite cualquier sensor para el cual personalice el firmware. Con una solución industrial lista para usar, configura una devolución de llamada a la interfaz de Watmonitor.</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -610,6 +610,15 @@ Las preguntas más frecuentes de la comunidad se responden a continuación
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
+
+              <div class="tema-de-preguntas-frecuentes">
+ <i class="faq-icon bi bi-question-circle"></i>
+¿Cómo se ve una devolución de llamada en Watmonitor?
+<div class="contenido-de-preguntas-frecuentes">
+ <p>Para escribir datos en Watmonitor, debe utilizar una solicitud HTTP (puerto 80 u otro si es un alojamiento local) / método POST HTTPS (puerto 443) al host de destino y al archivo data.php (por ejemplo https://hladinomer.eu/data.php). Los parámetros del mensaje son "hodnota": la altura del nivel en centímetros (tipo de datos INT) y "token", que representa el token de autorización. Tras registrarse correctamente, recibirá un encabezado HTTP 200 en la respuesta del servidor y también una salida de texto OK. Nota: Introduzca los parámetros sin comillas.</p>
+</div>
+ <i class="faq-toggle bi bi-chevron-right"></i>
+ </div><!-- Fin del artículo de preguntas frecuentes-->
 
             </div>
 
