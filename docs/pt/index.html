@@ -200,7 +200,7 @@ O aplicativo da Web é traduzido para inglês, alemão, francês, espanhol, russ
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
                   <h3>Tipos de sensores suportados</h3>
-                  <p style="text-align: justify;">O Watmonitor oferece suporte a uma ampla gama de tecnologias de sensores, incluindo: ultrassônico, óptico, laser, radar, capacitivo...</p>
+                  <p style="text-align: justify;">A interface web é universal. Ele não distingue de qual sensor obteve os dados. Qualquer sensor cujo firmware você personalize é suportado. Com uma solução industrial pronta, você configura um retorno de chamada para a interface do Watmonitor.</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -608,6 +608,15 @@ Isso elimina a necessidade de saber o endereço específico da interface do Watm
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
+
+              <div class="item-faq">
+ <i class="ícone-faq bi bi-círculo-de-perguntas"></i>
+<h3>Como é um retorno de chamada no Watmonitor?</h3>
+<div class="conteúdo-faq">
+ <p>Para gravar dados no Watmonitor, você deve usar uma solicitação HTTP (porta 80 ou outra se for hospedagem local) / método POST HTTPS (porta 443) para o host de destino e o arquivo data.php (por exemplo https://hladinomer.eu/data.php). Os parâmetros da mensagem são "hodnota" - a altura do nível em centímetros (tipo de dados INT) e "token", que representa o token de autorização. Após o registro bem-sucedido, você receberá um cabeçalho HTTP 200 na resposta do servidor e também uma saída de texto OK. Nota: Insira os parâmetros sem aspas.</p>
+</div>
+ <i class="faq-toggle bi bi-chevron-right"></i>
+ </div><!-- Fim do item de perguntas frequentes-->
 
             </div>
 
