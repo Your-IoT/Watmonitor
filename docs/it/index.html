@@ -201,9 +201,7 @@ L'applicazione Web è tradotta in inglese, tedesco, francese, spagnolo, russo e 
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
 <h3>Tipi di sensori supportati</h3>
-<p style="text-align: justify;">
-  Watmonitor supporta un'ampia gamma di tecnologie di sensori, tra cui: <strong>ultrasuoni</strong>, <strong>ottici</strong>, <strong>laser</strong>, <strong>radar</strong>, <strong>capacitivi</strong> e altro ancora.
-</p>
+<p style="text-align: justify;">L'interfaccia web è universale. Non distingue da quale sensore ha ottenuto i dati. Sono supportati tutti i sensori per i quali si personalizza il firmware. Con una soluzione industriale pronta all'uso, si imposta un callback all'interfaccia Watmonitor.</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -612,7 +610,14 @@ Questa pagina consente agli utenti di immettere le <strong>dimensioni del pozzo 
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
-
+<div class="faq-item">
+ <i class="faq-icon bi bi-question-circle"></i>
+<h3>Come appare un callback su Watmonitor?</h3>
+<div class="contenuto-faq">
+ <p>Per scrivere dati su Watmonitor, è necessario utilizzare un metodo POST di richiesta HTTP (porta 80 o un'altra se si tratta di hosting locale) / HTTPS (porta 443) all'host di destinazione e al file data.php (ad esempio https://hladinomer.eu/data.php). I parametri del messaggio sono "hodnota", ovvero l'altezza del livello in centimetri (tipo di dati INT) e "token", che rappresenta il token di autorizzazione. Una volta completata la registrazione, riceverai un'intestazione HTTP 200 nella risposta del server e anche un output di testo OK. Nota: immettere i parametri senza virgolette.</p>
+</div>
+ <i class="faq-toggle bi bi-chevron-right"></i>
+ </div><!-- Fine elemento Faq-->
 
             </div>
 
