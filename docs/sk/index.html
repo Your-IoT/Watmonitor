@@ -617,6 +617,15 @@ Pre možnosť spúšťania <strong>PHP skriptov</strong> pre Watmonitor, musí s
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
+                               <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+<h3>Ako vyzerá callback na Watmonitor?</h3>
+<div class="faq-content">
+ <p>Pre zápis dát do Watmonitora musíte použiť request HTTP (port 80, prípadne aj iný ak ide o lokálny hosting) / HTTPS (port 443) POST metódu na cieľový host a súbor data.php (vzorovo https://hladinomer.eu/data.php). Parametrami správy je "hodnota" - výška hladiny v centrimetroch (dátový typ INT) a "token", čo reprezentuje autorizačný token. Pri úspešnom zápise získate v odpovedi servera hlavičku HTTP 200 a tiež textový výstup OK. Poznámka: Parametre zadávajte bez úvodzoviek.</p>
+</div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
             </div>
 
           </div>
