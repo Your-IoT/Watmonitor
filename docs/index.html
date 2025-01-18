@@ -203,7 +203,7 @@ Webapp is translated to English, German, French, Spanish, Russian and Slovak lan
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
                   <h3>Supported Sensor Types</h3>
-                  <p style="text-align: justify;">Watmonitor supports a wide range of sensor technologies, including: ultrasonic, optical, laser, radar, Capacitive, etc.</p>
+                  <p style="text-align: justify;">The web interface is universal. It does not distinguish from which sensor it obtained data. Any sensor for which you customize the firmware is supported. For a ready-made industrial solution, you set a callback to the Watmonitor interface.</p>
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -614,7 +614,14 @@ This eliminates the need to know the specific Watmonitor interface address, offe
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
-
+<div class="faq-item">
+<i class="faq-icon bi bi-question-circle"></i>
+<h3>What does the callback look like on Watmonitor?</h3>
+<div class="faq-content">
+<p>To write data to Watmonitor, you must use the HTTP request (port 80, or another if it is local hosting) / HTTPS (port 443) POST method to the target host and the data.php file (for example https://hladinomer.eu/data.php). The message parameters are "value" - the water level in centimeters (data type INT) and "token", which represents the authorization token. If the write is successful, you will receive an HTTP 200 header in the server response and also an OK text output. Note: Enter the parameters without quotes.</p>
+</div>
+<i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->
 
             </div>
 
