@@ -137,7 +137,7 @@
 <p>Pour les ménages et l'industrie</p>
             <div class="d-flex">
 <a href="https://hladinomer.eu/?lang=fr" class="btn btn-primary rounded-pill">Essayez Watmonitor</a>
-<a href="https://www.upwork.com/services/product/development-it-watmonitor-limited-offer-only-first-3-people-1881431049001406449" class="btn btn-success rounded-pill">Acheter Watmonitor</a>
+<a href="https://www.upwork.com/services/product/development-it-watmonitor-limited-offer-only-first-3-people-1881431049001406449" class="btn btn-success rounded-pill">Version intégrale</a>
 <a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS" class="btn btn-info rounded-pill">Exemples de nœuds de capteurs</a>
 <a href="https://hladinomer.eu/QR/" class="btn btn-danger rounded-pill">Scanner de codes QR</a>
             </div>
@@ -172,16 +172,15 @@
           <div class="col-xl-5 content">
 <h2>À propos de Watmonitor : système universel de surveillance du niveau d'eau</h2>
 <p style="text-align: justify;">
-Application Web basée sur PHP, HTML5, Bootstrap. Interface Web centralisée capable de recevoir des données de niveau d'eau à partir d'un nœud de capteur IoT (Internet des objets) (Arduino, ESP32, ESP8266 ou personnalisé) et de les stocker dans la base de données MySQL / MariaDB.
-Elle permet à l'utilisateur de voir les données réelles du niveau d'eau, du volume, de la tendance de mesure et de l'état de connectivité du capteur en temps réel.
-L'utilisateur peut parcourir toutes les mesures dans un tableau avec horodatage avec la possibilité de supprimer l'enregistrement exact. Il est également possible de voir les mesures du niveau d'eau dans des graphiques linéaires, où l'utilisateur peut télécharger une partie complète ou sélectionnée par l'utilisateur du graphique pour la visualisation ou une analyse plus approfondie dans des logiciels tiers (MATLAB, EXCEL), par exemple au format .csv.
+Application Web développée en PHP, HTML5 et Bootstrap. Son interface centralisée reçoit les données de niveau d'eau envoyées par un capteur IoT (Arduino, ESP32, ESP8266 ou autre solution personnalisée) et les stocke dans une base de données MySQL / MariaDB.
+Elle permet aux utilisateurs de suivre en temps réel le niveau d'eau, le volume, l'évolution des mesures ainsi que l'état de connectivité du capteur.
+Toutes les mesures sont consultables sous forme de tableau avec horodatage, avec la possibilité de supprimer un enregistrement précis. Les données peuvent également être visualisées sous forme de graphiques linéaires, offrant la possibilité de télécharger l'intégralité ou une sélection du graphique pour une analyse approfondie avec des logiciels tiers tels que MATLAB ou Excel, notamment au format .csv.
 </p>
 <p style="text-align: justify;">
-L'interface Web dispose également de statistiques qui visualisent la mesure du niveau d'eau maximum et minimum par période de temps du jour, de la semaine, du mois dans le graphique de jauge.
-Le nœud de capteur peut fournir une mesure différentielle (par le haut) ou totale (par le bas) du niveau d'eau.
-Convient aux applications dans les puits creusés, les puisards, les réservoirs. Peut également être utilisé pour surveiller les matériaux en vrac dans les zones de stockage telles que les silos, les conteneurs.
-L'application Web est entièrement réactive et disponible pour toutes les plateformes, y compris les smartphones, les ordinateurs et les téléviseurs intelligents.
-L'application Web est traduite en anglais, allemand, français, espagnol, russe et slovaque.
+L'interface Web propose des statistiques interactives affichant les niveaux d'eau minimum et maximum sur différentes périodes (jour, semaine, mois) à l'aide d'un graphique de jauge.
+Le capteur peut mesurer le niveau d'eau de deux manières : soit en différentiel (depuis le haut), soit en total (depuis le bas).
+Il est idéal pour une utilisation dans les puits creusés, les puisards et les réservoirs. Il peut également servir à la surveillance des matériaux en vrac dans des espaces de stockage tels que les silos et les conteneurs.
+L'application Web est entièrement réactive et compatible avec toutes les plateformes : smartphones, ordinateurs et téléviseurs connectés. Elle est disponible en plusieurs langues, dont l'anglais, l'allemand, le français, l'espagnol, le russe et le slovaque.
 </p>
           </div>
 
@@ -208,10 +207,11 @@ L'application Web est traduite en anglais, allemand, français, espagnol, russe 
                 <div class="icon-box">
                   <i class="bi bi-cpu-fill"></i>
                  <h3><a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS">Nœud de démonstration</a></h3>
-<p style="text-align: justifier;">Plusieurs codes sources sont disponibles pour Watmonitor (Arduino Core) pour le matériel open source ESP32, ESP8266 et Arduino avec prise en charge du WiFi, connexion Ethernet à cette interface Web.
-Toutes les implémentations sont liées à des capteurs de distance à ultrasons avec signaux de déclenchement et d'écho (HC-SR04, HY-SRF05, JSN-SR04T).
-Des implémentations logicielles étendues avec prise en charge Deep Sleep (ULP) et Over-The-Air (OTA) sont également disponibles pour ESP8266 et ESP32.
-Pour ESP32, en outre, l'utilisation de FreeRTOS (communication inter-tâches), les implémentations de programmes dans ESP-IDF (Espressif IoT Development Framework) et la prise en charge de PHY Ethernet avec LAN8720.
+<p style="text-align: justifier;">
+Plusieurs codes sources sont disponibles pour Watmonitor (Arduino Core), compatibles avec les cartes open source ESP32, ESP8266 et Arduino. Ils prennent en charge la connexion WiFi et Ethernet à l’interface Web.
+Toutes les implémentations sont conçues pour fonctionner avec des capteurs de distance à ultrasons utilisant des signaux de déclenchement et d’écho (HC-SR04, HY-SRF05, JSN-SR04T).
+Des versions avancées du logiciel, incluant la gestion du mode Deep Sleep (ULP) et les mises à jour Over-The-Air (OTA), sont également disponibles pour ESP8266 et ESP32.
+Pour l’ESP32, il est en outre possible d’exploiter FreeRTOS pour la communication inter-tâches, d’implémenter des programmes avec ESP-IDF (Espressif IoT Development Framework) et d’utiliser la prise en charge du PHY Ethernet avec le contrôleur LAN8720.
 </p>    
  </div>
               </div> <!-- End Icon Box -->
