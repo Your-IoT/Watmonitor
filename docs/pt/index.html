@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Watmonitor – Sistema de monitoramento de nível de água em tempo real para aplicação IoT</title>
-<meta name="keywords" content="monitoramento de nível de água, monitoramento de água IoT, aplicativo da web Watmonitor, dados de água em tempo real, interface de sensor de tanque de água, sensor ultrassônico de água, monitoramento de água ESP32, gerenciamento de dados de sensor IoT, monitoramento de água de código aberto, rastreamento de volume de poço de água, soluções de monitoramento de água industrial, monitoramento de água multiplataforma, digitalização de sensor de código QR, aplicativos IoT auto-hospedados, visualização de dados de água, sensores de nível de água IoT, interface de monitoramento de água responsiva, monitoramento de água PHP e MySQL, monitoramento de nível de água Arduino, sensores de água FreeRTOS, recursos e funcionalidades do Watmonitor, sistema de monitoramento de água multilíngue, gráficos de nível de água para download">
-<meta name="description" content="Watmonitor é um aplicativo web para monitoramento de nível de água em tempo real. Agnóstico de sensor, de código aberto e multiplataforma com suporte a ESP32, gráficos, escaneamento QR e muito mais!">
+<title>Painel IoT de Monitoramento de Nível de Água - Watmonitor</title>
+<meta name="keywords" content="monitoramento de água IoT, painel de nível de água, sistema inteligente de reservatório de água, monitoramento de água em tempo real, medidor de água IoT, sensor de nível de água, acompanhamento de volume de água, monitoramento de reservatório, sistema de água inteligente, monitoramento de poço, monitoramento de qualidade da água">
+<meta name="description" content="Watmonitor é um painel IoT inteligente para monitoramento de níveis de água. Coleta e armazena dados em tempo real de sensores IoT, proporcionando gestão eficiente da água.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://your-iot.github.io/Watmonitor/pt/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="../../sitemap.xml">
@@ -170,18 +170,16 @@
         <div class="row align-items-xl-center gy-5">
 
           <div class="col-xl-5 content">
-<h2>Watmonitor: Sistema Universal de Monitoramento de Nível de Água</h2>
+<h2>Watmonitor: Painel IoT de Monitoramento de Nível de Água</h2>
 <p style="text-align: justify;">
-Webapp baseado em PHP, HTML5, Bootstrap. Interface web centralizada capaz de receber dados de nível de água do nó sensor de IoT (Internet das Coisas) (Arduino, ESP32, ESP8266 ou personalizado) e armazená-los no banco de dados MySQL / MariaDB.
-Ele permite que o usuário veja dados reais de nível de água, volume, tendência de medição e status de conectividade do sensor em tempo real.
-O usuário pode navegar por todas as medições na tabela com registro de data e hora com opção para excluir registro exato. Também é possível ver as medições de nível de água em gráficos de linha, onde o usuário pode baixar parte completa ou selecionada pelo usuário do gráfico para visualização ou análise posterior em softwares de terceiros (MATLAB, EXCEL), por exemplo, formato .csv.
+Watmonitor é um painel centralizado baseado na web para monitoramento de níveis de líquidos e materiais via IoT. Ele coleta dados em tempo real de nós sensores, incluindo sensores de distância ultrassônicos e a laser. 
+A interface intuitiva permite que os usuários monitorem o nível e volume de água, acompanhem tendências (em alta ou baixa) e verifiquem o status de conectividade dos sensores. 
+As visualizações avançadas incluem gráficos de medidores para valores máximos e mínimos ao longo do tempo, assim como gráficos de área mostrando dados históricos do nível de água. Todos os dados podem ser exportados em formato .csv para integração com SCADA, HMI, ERP, MES ou Excel.
 </p>
 <p style="text-align: justify;">
-A interface web também possui estatísticas que visualizam a medição máxima e mínima do nível de água por período de tempo de dia, semana, mês no gráfico Gauge.
-O nó do sensor pode fornecer nível de água em medição diferencial (do topo) ou total (do fundo).
-Adequado para aplicações em poços escavados, fossas, tanques. Também pode ser usado para monitorar materiais a granel em áreas de armazenamento, como silos, contêineres.
-O aplicativo da Web é totalmente responsivo e está disponível para todas as plataformas, incluindo smartphones, computadores, Smart TVs.
-O aplicativo da Web é traduzido para inglês, alemão, francês, espanhol, russo e eslovaco.
+Os nós sensores fornecem medições de nível de água, seja diferenciais (do topo) ou totais (do fundo). Watmonitor é projetado para rastreamento preciso de líquidos (água, óleo, combustível) e materiais a granel (grãos, pellets, ração, biomassa). 
+O aplicativo web é totalmente responsivo e compatível com todas as plataformas, incluindo smartphones, computadores e Smart TVs. 
+Está disponível em múltiplos idiomas, incluindo inglês, alemão, francês, espanhol, russo e eslovaco.
 </p>
           </div>
 
@@ -191,27 +189,33 @@ O aplicativo da Web é traduzido para inglês, alemão, francês, espanhol, russ
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
                   <i class="bi bi-collection-play"></i>
-                  <h3>Cenários de uso</h3>
-                  <p style="text-align: justify;">Ideal para monitoramento contínuo de água em poços, tanques, reservatórios, lagos, lagoas, rios, reservatórios e sistemas de esgoto.</p>
+<h3>Cenários de Uso</h3>
+<p style="text-align: justify;">
+Watmonitor é ideal para <strong>monitoramento em tempo real do nível de água</strong> em <strong>poços</strong>, <strong>reservatórios de água</strong>, <strong>sumidouros</strong>, <strong>lagos</strong>, <strong>tanques</strong>, <strong>rios</strong>, <strong>reservatórios</strong> e <strong>sistemas de esgoto</strong>. 
+Também é adequado para <strong>gestão de águas residuais</strong>, <strong>gestão industrial de água</strong> e <strong>medição de níveis de materiais a granel</strong> em aplicações industriais e residenciais.
+</p>
                 </div>
               </div> <!-- End Icon Box -->
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
-                  <h3>Tipos de sensores suportados</h3>
-                  <p style="text-align: justify;">A interface web é universal. Ele não distingue de qual sensor obteve os dados. Qualquer sensor cujo firmware você personalize é suportado. Com uma solução industrial pronta, você configura um retorno de chamada para a interface do Watmonitor.</p>
-                </div>
+<h3>Tipos de Sensores Compatíveis</h3>
+<p style="text-align: justify;">
+Watmonitor oferece uma interface web universal compatível com qualquer sensor. Ele integra automaticamente dados de sensores ultrassônicos, sensores de distância a laser ou qualquer sensor IoT personalizado com firmware configurado para o sistema. 
+Para soluções industriais, é possível conectar sensores diretamente através da API do Watmonitor para monitoramento e coleta de dados em tempo real.
+</p></div>
               </div> <!-- End Icon Box -->
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
                   <i class="bi bi-cpu-fill"></i>
-                  <h3><a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS">Nó de demonstração</a></h3>
-<p style="text-align: justify;">Vários códigos-fonte estão disponíveis para Watmonitor (Arduino Core) para hardware de código aberto ESP32, ESP8266 e Arduino com suporte para WiFi, conexão Ethernet para esta interface web.
-Todas as implementações estão vinculadas a sensores de distância ultrassônicos com sinais de disparo e eco (HC-SR04, HY-SRF05, JSN-SR04T).
-Implementações estendidas de software com suporte Deep Sleep (ULP) e Over-The-Air (OTA) também estão disponíveis para ESP8266 e ESP32.
-Para ESP32, além disso, o uso de FreeRTOS (comunicação entre tarefas), implementações de programas em ESP-IDF (Espressif IoT Development Framework) e suporte PHY Ethernet com LAN8720.
+<h3>Prototipagem Rápida</h3>
+<p style="text-align: justify;">
+Para um início rápido com o Watmonitor, estão disponíveis códigos-fonte para hardware open-source DIY. 
+Isso inclui ESP32, ESP8266, Arduino com suporte WiFi ou Ethernet e sensores de distância ultrassônicos ou laser ToF. 
+Você pode encontrar implementações básicas ou mais avançadas, incluindo funcionalidades como Ultra Low Power e atualizações Over-The-Air (OTA). 
+Para ESP32, também há implementações disponíveis em ESP-IDF, com FreeRTOS e comunicação entre tarefas (inter-task communication).
 </p>
  </div>
               </div> <!-- End Icon Box -->
@@ -219,10 +223,11 @@ Para ESP32, além disso, o uso de FreeRTOS (comunicação entre tarefas), implem
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
                   <i class="bi bi bi-qr-code-scan"></i>
-                  <h3><a href="https://hladinomer.eu/QR/">Leitor de código QR</a></h3>
-                  <p style="text-align: justify;">Simplifique o monitoramento em instalações multissensor com o recurso de leitura de código QR do Watmonitor. Recupere facilmente dados para qualquer nó sensor digitalizando seu código QR atribuído usando um smartphone.
-Isso elimina a necessidade de saber o endereço específico da interface do Watmonitor, oferecendo uma maneira rápida e confiável de acessar os dados mais recentes de qualquer nó sensor.</p>
-                </div>
+<h3>Recursos QR / AR</h3>
+<p style="text-align: justify;">
+Watmonitor permite acesso instantâneo aos últimos dados dos sensores ao escanear um código QR com seu smartphone. 
+Os usuários podem visualizar uma representação estática ou uma cena interativa em AR (Realidade Aumentada) com distância de câmera fixa, oferecendo uma forma mais envolvente de monitorar níveis de água e outros dados de sensores em tempo real.
+</p></div>
               </div> <!-- End Icon Box -->
 
             </div>
