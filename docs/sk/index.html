@@ -164,57 +164,105 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+<section id="about" class="about section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-xl-center gy-5">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-xl-center gy-5">
 
-          <div class="col-xl-5 content">
-<h2>Watmonitor - webové rozhranie hladiny vody</h2>
-<p style="text-align: justify;"> Centralizovaný webový dashboard pre monitorovanie hladiny kvapalín a výšky sypkých materiálov. Slúži na zber a spracovanie dát zo senzorových uzlov (ultrazvukové senzory, laserové snímače vzdialenosti). Intuitívne používateľské rozhranie umožňuje sledovať hladinu vody a objem v reálnom čase, vrátane trendov (stúpanie, pokles), stavu pripojenia senzorov a ďalších parametrov. Pokročilé vizualizácie sú dostupné vo forme ukazovateľových grafov (minimálne a maximálne hodnoty za zvolené obdobie) a čiarových/plošných grafov, ktoré zobrazujú históriu hladiny vody v časových intervaloch. Dáta je možné exportovať do formátu .csv pre systémy SCADA, HMI, ERP, MES alebo Excel. </p> <p style="text-align: justify;"> Senzorový uzol umožňuje merať hladinu vody diferenciálne (zhora) alebo celkovo (od dna nádrže). Riešenie je určené na presné sledovanie hladiny kvapalín (voda, olej, palivo…) aj sypkých materiálov (obilniny, pelety, krmivo, biomasa…). Webová aplikácia je plne responzívna a prístupná na všetkých platformách vrátane smartfónov, počítačov a inteligentných televízorov. Dostupná je vo viacerých jazykoch – angličtina, nemčina, francúzština, španielčina, ruština a slovenčina. </p>
-          </div>
+      <!-- Ľavý stĺpec -->
+      <div class="col-xl-5 content">
+        <h2>Watmonitor - webové rozhranie hladiny vody</h2>
+        <p style="text-align: justify;">
+          Centralizovaný webový dashboard pre monitorovanie hladiny kvapalín a výšky sypkých materiálov.
+          Slúži na zber a spracovanie dát zo senzorových uzlov (ultrazvukové senzory, laserové snímače vzdialenosti).
+          Intuitívne používateľské rozhranie umožňuje sledovať hladinu vody a objem v reálnom čase, vrátane trendov
+          (stúpanie, pokles), stavu pripojenia senzorov a ďalších parametrov. Pokročilé vizualizácie sú dostupné vo forme
+          ukazovateľových grafov (minimálne a maximálne hodnoty za zvolené obdobie) a čiarových/plošných grafov, ktoré
+          zobrazujú históriu hladiny vody v časových intervaloch. Dáta je možné exportovať do formátu .csv pre systémy
+          SCADA, HMI, ERP, MES alebo Excel.
+        </p>
+        <p style="text-align: justify;">
+          Senzorový uzol umožňuje merať hladinu vody diferenciálne (zhora) alebo celkovo (od dna nádrže). Riešenie je určené
+          na presné sledovanie hladiny kvapalín (voda, olej, palivo…) aj sypkých materiálov (obilniny, pelety, krmivo, biomasa…).
+          Webová aplikácia je plne responzívna a prístupná na všetkých platformách vrátane smartfónov, počítačov a inteligentných
+          televízorov. Dostupná je vo viacerých jazykoch – angličtina, nemčina, francúzština, španielčina, ruština a slovenčina.
+        </p>
+      </div>
+      <!-- Koniec ľavého stĺpca -->
 
-          <div class="col-xl-7">
-            <div class="row gy-4 icon-boxes">
+      <!-- Pravý stĺpec -->
+      <div class="col-xl-7">
+        <div class="row gy-4 icon-boxes">
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box">
-                  <i class="bi bi-collection-play"></i>
-<h3>Scenáre použitia</h3>
-<p style="text-align: justify;"> Ideálne riešenie pre <strong>monitorovanie hladiny vody v reálnom čase</strong> v <strong>studniach</strong>, <strong>nádržiach</strong>, <strong>šachtách</strong>, <strong>jazerách</strong>, <strong>rybníkoch</strong>, <strong>riekach</strong>, <strong>priehradách</strong> a <strong>kanalizačných systémoch</strong>. Vhodné aj pre <strong>odpadové a vodné hospodárstvo</strong> či <strong>meranie výšky sypkých materiálov</strong> v priemyselných aj domácich aplikáciách. </p>
-</div>              
-</div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box">
-                  <i class="bi bi-clipboard-check"></i>
-                  <h3>Podporované senzory</h3>
-<p style="text-align: justify;"> Webové rozhranie je univerzálne – nerozlišuje, z ktorého senzora získava dáta. Podporovaný je akýkoľvek senzor, pre ktorý si prispôsobíte firmvér. Pre hotové priemyselné riešenia stačí nastaviť callback na API Watmonitora. </p>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box">
-                  <i class="bi bi-cpu-fill"></i>
-                  <h3>Senzorový uzol</h3>
-<p style="text-align: justify;"> Pre rýchly štart s Watmonitorom sú k dispozícii zdrojové kódy pre DIY open-source hardvér. Podporované sú platformy ako ESP32, ESP8266, Arduino s pripojením cez WiFi alebo Ethernet a senzory vzdialenosti – ultrazvukové a ToF laserové. K dispozícii sú základné aj pokročilejšie implementácie s funkciami ako <strong>Ultra Low Power</strong> režim alebo <strong>Over-The-Air aktualizácie</strong>. Pre ESP32 sú dostupné aj implementácie v <strong>ESP-IDF</strong>, s podporou <strong>FreeRTOS</strong> a inter-task komunikácie. </p>
- </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-box">
-                  <i class="bi bi bi-qr-code-scan"></i>
-                  <h3>QR / AR</h3>
-<p style="text-align: justify;"> Watmonitor vám umožní okamžitý prístup k najnovším dátam zo senzorov – stačí jednoducho naskenovať QR kód mobilným telefónom. Dáta je možné zobraziť ako statickú vizualizáciu alebo v <strong>rozšírenej realite (AR)</strong> s orbitálnou scénou a pevnou vzdialenosťou kamery, čo prináša interaktívnejší zážitok. </p>
-                </div>
-              </div> <!-- End Icon Box -->
-
+          <!-- Box 1 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <i class="bi bi-collection-play"></i>
+              <h3>Scenáre použitia</h3>
+              <p style="text-align: justify;">
+                Ideálne riešenie pre <strong>monitorovanie hladiny vody v reálnom čase</strong> v
+                <strong>studniach</strong>, <strong>nádržiach</strong>, <strong>šachtách</strong>,
+                <strong>jazerách</strong>, <strong>rybníkoch</strong>, <strong>riekach</strong>,
+                <strong>priehradách</strong> a <strong>kanalizačných systémoch</strong>.
+                Vhodné aj pre <strong>odpadové a vodné hospodárstvo</strong> či
+                <strong>meranie výšky sypkých materiálov</strong> v priemyselných aj domácich aplikáciách.
+              </p>
             </div>
-          </div>
+          </div><!-- End Icon Box -->
+
+          <!-- Box 2 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-clipboard-check"></i>
+              <h3>Podporované senzory</h3>
+              <p style="text-align: justify;">
+                Webové rozhranie je univerzálne – nerozlišuje, z ktorého senzora získava dáta.
+                Podporovaný je akýkoľvek senzor, pre ktorý si prispôsobíte firmvér.
+                Pre hotové priemyselné riešenia stačí nastaviť callback na API Watmonitora.
+              </p>
+            </div>
+          </div><!-- End Icon Box -->
+
+          <!-- Box 3 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-cpu-fill"></i>
+              <h3>Senzorový uzol</h3>
+              <p style="text-align: justify;">
+                Pre rýchly štart s Watmonitorom sú k dispozícii zdrojové kódy pre DIY open-source hardvér.
+                Podporované sú platformy ako ESP32, ESP8266, Arduino s pripojením cez WiFi alebo Ethernet
+                a senzory vzdialenosti – ultrazvukové a ToF laserové.
+                K dispozícii sú základné aj pokročilejšie implementácie s funkciami ako
+                <strong>Ultra Low Power</strong> režim alebo <strong>Over-The-Air aktualizácie</strong>.
+                Pre ESP32 sú dostupné aj implementácie v <strong>ESP-IDF</strong>,
+                s podporou <strong>FreeRTOS</strong> a inter-task komunikácie.
+              </p>
+            </div>
+          </div><!-- End Icon Box -->
+
+          <!-- Box 4 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-qr-code-scan"></i>
+              <h3>QR / AR</h3>
+              <p style="text-align: justify;">
+                Watmonitor vám umožní okamžitý prístup k najnovším dátam zo senzorov – stačí jednoducho naskenovať QR kód
+                mobilným telefónom. Dáta je možné zobraziť ako statickú vizualizáciu alebo v
+                <strong>rozšírenej realite (AR)</strong> s orbitálnou scénou a pevnou vzdialenosťou kamery,
+                čo prináša interaktívnejší zážitok.
+              </p>
+            </div>
+          </div><!-- End Icon Box -->
 
         </div>
       </div>
+      <!-- Koniec pravého stĺpca -->
 
-    </section><!-- /About Section -->
+    </div>
+  </div>
+
+</section><!-- /About Section -->
+
 
     <!-- Features Section -->
     <section id="features" class="features section">
