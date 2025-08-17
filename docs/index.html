@@ -172,14 +172,13 @@
           <div class="col-xl-5 content">
 <h2>Watmonitor: IoT water level monitoring dashboard</h2>
 <p style="text-align: justify;">
-Webapp based on PHP, HTML5, Bootstrap. Centralized web interface capable receiving water level data from IoT (Internet of Things) sensor node (Arduino, ESP32, ESP8266 or industrial solution) and storing them in MySQL / MariaDB database.
-It empowers user to see actual data of water level, volume, measurement tendency and sensor's connectivity status in real-time. 
-User is able to browse through all measurements in a list with timestamp and option to delete any record. It is also possible to see water level measurements in Line graphs, where user is able to download full or user-selected part of graph for visualisation or further analysis in 3rd party softwares (MATLAB, EXCEL), e.g. .csv format.
+Centralized web-based dashboard for liquid level and height level monitoring. It is also used to receive data from sensor nodes (ultrasonic, laser distance sensors).
+Easy-to-use interface empowers user to see water level and volume in real time, including its tendency (rising, decreasing), sensor node connectivity status, etc.
+There are also more advances visualisations by gauge graphs (maximum / minimum values per time period), also Line Area graphs for water level in time periods with full history, these can be exported in .csv format for SCADA, HMI, ERP, MES, or Excel.
 </p>
 <p style="text-align: justify;">
-Web interface has also statistics that visualises maximum and minimum water level measurement per time period of day, week, month in Gauge graph.
 Sensor node can provide water level in differential (from the top) or total (from the bottom) measurement.
-Suitable for applications in dug wells, cesspools, tanks. Can also be used to monitor bulk materials in storage areas such as silos, containers.
+Designed to track liquid (water, oil, fuel…) and bulk material (grains, pellets, feed, biomass…) levels with precision.
 Web application is fully responsive and available for all platforms including smartphones, computers, Smart TVs.
 Webapp is translated to English, German, French, Spanish, Russian and Slovak language.
 </p>
@@ -194,7 +193,7 @@ Webapp is translated to English, German, French, Spanish, Russian and Slovak lan
                   <h3>Usage Scenarios</h3>
                   <p style="text-align: justify;">
   Ideal for <strong>real-time water level monitoring</strong> in <strong>wells</strong>, <strong>tanks</strong>, <strong>sumps</strong>, <strong>lakes</strong>, <strong>ponds</strong>, <strong>rivers</strong>, <strong>reservoirs</strong>, and <strong>sewage systems</strong>. 
-  Also suitable for <strong>waste management</strong> and <strong>measuring bulk material levels</strong> in industrial or home applications.
+  Also suitable for <strong>waste, water management</strong> and <strong>measuring bulk material levels</strong> in industrial or home applications.
 </p>
                 </div>
               </div> <!-- End Icon Box -->
@@ -210,11 +209,12 @@ Webapp is translated to English, German, French, Spanish, Russian and Slovak lan
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
                   <i class="bi bi-cpu-fill"></i>
-                  <h3><a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS">Sensor node</a></h3>
-<p style="text-align: justify;">For Watmonitor, several source codes (Arduino Core) are available for open-source hardware ESP32, ESP8266 and Arduino with support for WiFi, Ethernet connections to this web interface.
-All implementations are tied to ultrasonic distance sensors with Trigger and Echo signals (HC-SR04, HY-SRF05, JSN-SR04T) or ToF laser I2C sensors (VL53L1X / VL53L0X).
-For ESP8266 and ESP32, extended program implementations with support for Deep Sleep (ULP), Over-The-Air (OTA) are also available.
-For ESP32, in addition, the use of FreeRTOS (inter-task communication), program implementations in ESP-IDF (Espressif IoT Development Framework), and support for PHY Ethernet with LAN8720.
+                  <h3>Fast prototyping/h3>
+<p style="text-align: justify;">
+For fast start with Watmonitor, there are available source codes for DIY open-source hardware.
+That includes ESP32, ESP8266, Arduino with WiFi, Ethernet support and ultrasonic / ToF laser distance sensors.
+You can find there basic or more advanced implementations including functionalities such as: Ultra Low Power / Over-The-Air updates.
+For ESP32 there are also available implementations in ESP-IDF, with FreeRTOS and inter-task communication.
 </p>      
  </div>
               </div> <!-- End Icon Box -->
@@ -222,9 +222,11 @@ For ESP32, in addition, the use of FreeRTOS (inter-task communication), program 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
                   <i class="bi bi bi-qr-code-scan"></i>
-                  <h3><a href="https://hladinomer.eu/QR/">QR code scanner</a></h3>
-                  <p style="text-align: justify;">Streamline monitoring in multi-sensor installations with Watmonitor’s QR code scanning feature. Easily retrieve data for any sensor node by scanning its assigned QR code using a smartphone. 
-This eliminates the need to know the specific Watmonitor interface address, offering a quick, reliable way to access the most recent data from any sensor node.</p>
+                  <h3>QR / AR</a></h3>
+                  <p style="text-align: justify;">
+Watmonitor lets you instantly access the latest data from your sensors by simply scanning a QR code with your phone.
+Possible to get static visualisation or in AR (Augmented Reality) based scene (orbital with fixed camera distance), which is more interactive.
+</p>
                 </div>
               </div> <!-- End Icon Box -->
 
