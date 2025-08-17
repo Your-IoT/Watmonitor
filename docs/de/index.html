@@ -172,17 +172,18 @@
           <div class="col-xl-5 content">
 <h2>Watmonitor: Brunnen Wasserstand Überwachen System/h2>
 <p style="text-align: justify;">
-Eine zentralisierte Weboberfläche zur Erfassung und Speicherung von Wasserstandsdaten, die von IoT-Sensorknoten (z. B. Arduino, ESP32, ESP8266 oder benutzerdefinierte Geräte) gesendet werden. Die Daten werden in einer MySQL- oder MariaDB-Datenbank gespeichert.
-Die Webanwendung basiert auf PHP, HTML5 und Bootstrap. Benutzer können in Echtzeit den aktuellen Wasserstand, das Volumen, die Messentwicklung sowie den Verbindungsstatus des Sensors einsehen.
-Alle Messwerte werden in einer Tabelle mit Zeitstempel dargestellt und können durchsucht oder gezielt gelöscht werden. Zudem lassen sich die Messdaten als Liniendiagramm visualisieren. Benutzer haben die Möglichkeit, entweder die gesamte Messreihe oder einen ausgewählten Abschnitt als CSV-Datei herunterzuladen – beispielsweise zur weiteren Analyse in MATLAB oder Excel.
+Zentralisiertes webbasiertes Dashboard zur Überwachung des Flüssigkeits- und Materialhöhenstandes. Es empfängt Daten von Sensorknoten, einschließlich Ultraschall- und Laserdistanzsensoren. 
+Die benutzerfreundliche Oberfläche ermöglicht die Anzeige des Wasserstands und Volumens in Echtzeit sowie deren Tendenz (steigend, fallend) und den Status der Sensorknotenverbindung. 
+Erweiterte Visualisierungen, wie Messgeräte-Grafiken (Maximal-/Minimalwerte über definierte Zeiträume) und Linien-Flächen-Diagramme für den Wasserstand mit vollständiger Historie, können einfach im .csv-Format für SCADA-, HMI-, ERP-, MES-Systeme oder Excel exportiert werden.
 </p>
+
 <p style="text-align: justify;">
-Die Weboberfläche bietet zudem Statistiken, die die maximalen und minimalen Wasserstandsmessungen pro Tag, Woche und Monat in einem Diagramm visualisieren.
-Der Sensorknoten kann den Wasserstand entweder als Differenzwert (von oben) oder als Gesamtwert (von unten) erfassen.
-Das System eignet sich für den Einsatz in gegrabenen Brunnen, Senkgruben und Tanks. Es kann auch zur Überwachung von Schüttgütern in Lagerbereichen wie Silos und Containern verwendet werden.
-Die Webanwendung ist vollständig responsiv und auf allen Plattformen verfügbar, einschließlich Smartphones, Computern und Smart-TVs.
-Sie ist in Englisch, Deutsch, Französisch, Spanisch, Russisch und Slowakisch übersetzt.
+Sensorknoten liefern den Wasserstand entweder als Differenzmessung (von oben) oder als Gesamthöhenmessung (von unten). 
+Das System ist speziell für die präzise Überwachung von Flüssigkeiten (Wasser, Öl, Treibstoff…) und Schüttgütern (Getreide, Pellets, Futter, Biomasse…) konzipiert. 
+Die Webanwendung ist vollständig responsiv und auf allen Plattformen verfügbar, einschließlich Smartphones, Computern und Smart-TVs. 
+Die Webapp ist in Englisch, Deutsch, Französisch, Spanisch, Russisch und Slowakisch verfügbar.
 </p>
+
           </div>
 
           <div class="col-xl-7">
@@ -193,8 +194,10 @@ Sie ist in Englisch, Deutsch, Französisch, Spanisch, Russisch und Slowakisch ü
                   <i class="bi bi-collection-play"></i>
 <h3>Anwendungsszenarien</h3>
 <p style="text-align: justify;">
-  Ideal für das <strong>kontinuierliche Wasserqualitätsmonitoring</strong> in <strong>Brunnen</strong>, <strong>Speichertanks</strong>, <strong>Sümpfen</strong>, <strong>Seen</strong>, <strong>Teichen</strong>, <strong>Flüssen</strong>, <strong>Reservoirs</strong> und <strong>Abwassersystemen</strong>. Ebenfalls geeignet für die <strong>Überwachung von Prozesswässern</strong> in industriellen Anwendungen.
+Ideal für die <strong>Echtzeit-Überwachung des Wasserstands</strong> in <strong>Brunnen</strong>, <strong>Behältern</strong>, <strong>Abscheidern</strong>, <strong>Seen</strong>, <strong>Teichen</strong>, <strong>Flüssen</strong>, <strong>Speichern</strong> und <strong>Abwassersystemen</strong>. 
+Ebenfalls geeignet für <strong>Abwasser- und Wassermanagement</strong> sowie zur <strong>Messung von Schüttgutständen</strong> in industriellen oder häuslichen Anwendungen.
 </p>
+
 
                 </div>
               </div> <!-- End Icon Box -->
@@ -203,28 +206,35 @@ Sie ist in Englisch, Deutsch, Französisch, Spanisch, Russisch und Slowakisch ü
                 <div class="icon-box">
                   <i class="bi bi-clipboard-check"></i>
 <h3>Unterstützte Sensortypen</h3>
-<p style="text-align: justify;">Die Weboberfläche ist universell. Dabei wird nicht unterschieden, von welchem ​​Sensor die Daten bezogen wurden. Jeder Sensor, für den Sie die Firmware anpassen, wird unterstützt. Mit einer fertigen Industrielösung richten Sie einen Rückruf zur Watmonitor-Schnittstelle ein.</p>
+<p style="text-align: justify;">
+Die Weboberfläche ist universell einsetzbar und unterscheidet nicht, von welchem Sensor die Daten stammen. Jeder Sensor, für den die Firmware angepasst wird, wird unterstützt. 
+Für eine fertige industrielle Lösung kann ein Callback an die Watmonitor-API eingerichtet werden.
+</p>
 </div>
               </div> <!-- End Icon Box -->
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
                   <i class="bi bi-cpu-fill"></i>
-                  <h3><a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS">Sensor-Knoten</a></h3>
-<p style="text-align: justify;">Für Watmonitor (Arduino Core) sind mehrere Quellcodes für die Open-Source-Hardware ESP32, ESP8266 und Arduino mit Unterstützung für WLAN und Ethernet-Verbindung zu dieser Webschnittstelle verfügbar.
-Alle Implementierungen basieren auf Ultraschall-Abstandssensoren mit Trigger- und Echosignalen (HC-SR04, HY-SRF05, JSN-SR04T).
-Für ESP8266 und ESP32 sind erweiterte Software-Implementierungen verfügbar, einschließlich Deep-Sleep-Modus (ULP) und Over-the-Air-Updates (OTA).
-Beim ESP32 werden zusätzlich FreeRTOS für die Inter-Task-Kommunikation, Implementierungen im ESP-IDF (Espressif IoT Development Framework) sowie PHY-Ethernet-Unterstützung mit LAN8720 genutzt.
+                 <h3>Schnelles Prototyping</h3>
+<p style="text-align: justify;">
+Für einen schnellen Start mit Watmonitor stehen Quellcodes für DIY Open-Source-Hardware zur Verfügung. 
+Dazu gehören ESP32, ESP8266, Arduino mit WiFi- und Ethernet-Unterstützung sowie Ultraschall- und ToF-Lasersensoren. 
+Es gibt sowohl einfache als auch fortgeschrittene Implementierungen mit Funktionen wie Ultra-Low-Power-Betrieb und Over-The-Air-Updates. 
+Für ESP32 sind zudem Implementierungen in ESP-IDF verfügbar, inklusive FreeRTOS und Inter-Task-Kommunikation.
 </p>
+
 </div>
               </div> <!-- End Icon Box -->
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
                   <i class="bi bi bi-qr-code-scan"></i>
-                 <h3><a href="https://hladinomer.eu/QR/">QR-Code-Scanner</a></h3>
-<p style="text-align: justify;">Optimieren Sie die Überwachung in Multisensorinstallationen mit der QR-Code-Scanfunktion von Watmonitor. Rufen Sie Daten für jeden Sensorknoten ganz einfach ab, indem Sie den zugewiesenen QR-Code mit einem Smartphone scannen.
-Dadurch ist es nicht mehr nötig, die spezifische Watmonitor-Schnittstellenadresse zu kennen, und Sie haben eine schnelle und zuverlässige Möglichkeit, auf die aktuellsten Daten von jedem Sensorknoten zuzugreifen.</p>
+<h3>QR / AR</h3>
+<p style="text-align: justify;">
+Mit Watmonitor können Sie sofort auf die aktuellen Sensordaten zugreifen, indem Sie einfach einen QR-Code mit Ihrem Smartphone scannen. 
+Es ist möglich, entweder eine statische Visualisierung oder eine AR-gestützte (Augmented Reality) Szene anzuzeigen (orbital mit festem Kamerabstand), die interaktiver ist.
+</p>
 </div>
               </div> <!-- End Icon Box -->
 
