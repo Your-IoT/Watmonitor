@@ -625,9 +625,15 @@ Pre možnosť spúšťania <strong>PHP skriptov</strong> pre Watmonitor, musí s
                 <i class="faq-icon bi bi-question-circle"></i>
 <h3>Ako integrovať Watmonitor do iných systémov?</h3>
 <div class="faq-content">
- <p>Watmonitor má dva JSON API endpointy. 
-Na jednom <a href="https://hladinomer.eu/json_output.php">json_output.php</a> poskytuje posledné známe dáta (natívne ho používa aj QR skener / AR vizualizácia) a na druhom <a href="https://hladinomer.eu/json_output2.php">json_output2.php</a> poskytuje všetky zaznamenané dáta, prípadne podporuje GET params pre ohraničenie výsledkov (od - do).
-Skrz tieto endpointy viete systémy integrovať do ďalších softvérov a databáz (SAP, Odoo, Loxone, Power BI, Home Assistant, Grafana, Loxone, Node-RED, InfluxDB, OpenHAB, Domoticz, Homebridge) pre vizualizáciu, automatizáciu, či doplnenie o webhooky v prípade krízových situácii a udalostí (Zapier, IFTTT, Microsoft Power Automate).
+ <p>
+   <strong>Watmonitor má dva JSON API endpointy:</strong><br>
+   • <a href="https://hladinomer.eu/json_output.php"><strong>json_output.php</strong></a> – poskytuje <strong>posledné známe dáta</strong> (natívne ho používa QR skener / AR vizualizácia).<br>
+   • <a href="https://hladinomer.eu/json_output2.php"><strong>json_output2.php</strong></a> – poskytuje <strong>všetky zaznamenané dáta</strong> s možnosťou zadania <strong>GET parametrov</strong> pre ohraničenie výsledkov (od–do), prípadne všetko od, alebo všetko do.<br>
+   <strong>Skrz tieto endpointy je možné integrovať Watmonitor do ďalších softvérov a databáz:</strong>
+   <ul>
+     <li>SAP, Odoo, Loxone, Power BI, Home Assistant, Grafana, Node-RED, InfluxDB, OpenHAB, Domoticz, Homebridge</li>
+     <li>Pre vizualizáciu, automatizáciu alebo doplnenie o webhooky v prípade krízových situácií a udalostí (Zapier, IFTTT, Microsoft Power Automate)</li>
+   </ul>
  </p>
 </div>
 
