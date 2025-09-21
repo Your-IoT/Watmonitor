@@ -583,7 +583,7 @@ Watmonitor allows instant access to the latest sensor data by scanning a QR code
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-               <h3>What language options are available in the Watmonitor web app?</h3>
+               <h3>How to integrate Watmonitor into other systems?</h3>
 <div class="faq-content">
   <p>The Watmonitor web app offers full <strong>language translations</strong> for the following languages: <strong>English</strong>, <strong>German</strong>, <strong>Russian</strong>, <strong>Spanish</strong>, <strong>French</strong>, and <strong>Slovak</strong>, making it accessible to a global audience.
   </p>
@@ -594,10 +594,18 @@ Watmonitor allows instant access to the latest sensor data by scanning a QR code
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Can I log data from the Watmonitor into other systems?</h3>
+<h3>How to integrate Watmonitor into other systems?</h3>
 <div class="faq-content">
-  <p>Yes, Watmonitor provides <strong>JSON output</strong> through its web interface, allowing you to easily parse and integrate the data into other systems. Supported platforms include <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong>, and more. The data includes the latest <strong>water level</strong>, <strong>water volume</strong>, and <strong>time of record</strong>, all stored in the database.
-  </p>
+<p>
+<strong>Watmonitor has two JSON API endpoints - accessible via HTTP GET:</strong><br>
+• <a href="https://hladinomer.eu/json_output.php"><strong>json_output.php</strong></a> – provides <strong>the latest known data</strong> (natively used by QR scanner / AR visualization).<br>
+• <a href="https://hladinomer.eu/json_output2.php"><strong>json_output2.php</strong></a> – provides <strong>all recorded data</strong> with the option to enter <strong>GET parameters</strong> to limit the results (from–to), or all from, or all to.<br>
+<strong>Through these endpoints, Watmonitor can be integrated into other software and databases:</strong>
+<ul>
+<li>SAP, Odoo, Loxone, Power BI, Home Assistant, Grafana, Node-RED, InfluxDB, OpenHAB, Domoticz, Homebridge</li>
+<li>For visualization, automation or adding webhooks in case of crisis situations and events (Zapier, IFTTT, Microsoft Power Automate)</li>
+</ul>
+</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
