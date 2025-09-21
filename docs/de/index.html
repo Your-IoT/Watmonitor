@@ -599,9 +599,17 @@ Die am häufigsten gestellten Fragen der Community werden unten beantwortet
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Kann ich Daten von Watmonitor in andere Systeme protokollieren?</h3>
+<h3>Wie lässt sich Watmonitor in andere Systeme integrieren?</h3>
 <div class="faq-content">
-<p>Ja, Watmonitor bietet <strong>JSON-Ausgabe</strong> über seine Weboberfläche, sodass Sie die Daten problemlos analysieren und in andere Systeme integrieren können. Zu den unterstützten Plattformen gehören <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong> und mehr. Die Daten umfassen den neuesten <strong>Wasserstand</strong>, das <strong>Wasservolumen</strong> und die <strong>Aufzeichnungszeit</strong>, die in der Datenbank gespeichert sind.
+<p>
+<strong>Watmonitor verfügt über zwei JSON-API-Endpunkte – erreichbar über HTTP GET:</strong><br>
+• <a href="https://hladinomer.eu/json_output.php"><strong>json_output.php</strong></a> – liefert <strong>die aktuellsten bekannten Daten</strong> (wird nativ von QR-Scannern/AR-Visualisierungen verwendet).<br>
+• <a href="https://hladinomer.eu/json_output2.php"><strong>json_output2.php</strong></a> – liefert <strong>alle aufgezeichneten Daten</strong> mit der Möglichkeit, <strong>GET-Parameter</strong> einzugeben, um die Ergebnisse (von–bis), alle von oder alle bis einzugrenzen.<br>
+<strong>Über diese Endpunkte kann Watmonitor in andere Software integriert werden und Datenbanken:</strong>
+<ul>
+<li>SAP, Odoo, Loxone, Power BI, Home Assistant, Grafana, Node-RED, InfluxDB, OpenHAB, Domoticz, Homebridge</li>
+<li>Zur Visualisierung, Automatisierung oder zum Hinzufügen von Webhooks in Krisensituationen und bei Ereignissen (Zapier, IFTTT, Microsoft Power Automate)</li>
+</ul>
 </p>
 </div>
 
