@@ -623,9 +623,11 @@ Pre možnosť spúšťania <strong>PHP skriptov</strong> pre Watmonitor, musí s
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Môžem prenášať dáta z Watmonitora do iných systémov?</h3>
+<h3>Ako integrovať Watmonitor do iných systémov?</h3>
 <div class="faq-content">
- <p>Áno, Watmonitor poskytuje <strong>výstup JSON</strong> prostredníctvom svojho webového rozhrania, čo umožňnuje stiahnutie a deserializáciu týchto dát pre ďalšiu integráciu do 3rd party systémov. Medzi najznámejšie patria <strong>Loxone</strong>, <strong>Grafana</strong>, <strong>Kibana</strong>, <strong>Domoticz</strong>, <strong>Node-RED</strong>, <strong>Home Assistant</strong>, <strong>Thingsboard</strong> a ďalšie. Údaje zahŕňajú posledné známe dáta o <strong>hladine a objeme vody</strong>, <strong>čas záznamu</strong> z SQL databázy.
+ <p>Watmonitor má dva JSON API endpointy. 
+Na jednom <a href="https://hladinomer.eu/json_output.php">json_output.php</a> poskytuje posledné známe dáta a na druhom <a href="https://hladinomer.eu/json_output2.php">json_output2.php</a> poskytuje všetky zaznamenané dáta, prípadne podporuje GET params pre ohraničenie výsledkov (od - do).
+Skrz tieto endpointy viete systémy integrovať do ďalších softvérov a databáz (SAP, Odoo, Loxone, Power BI, Home Assistant, Grafana, Loxone, Node-RED, InfluxDB, OpenHAB, Domoticz, Homebridge) pre vizualizáciu, automatizáciu, či doplnenie o webhooky v prípade krízových situácii a udalostí (Zapier, IFTTT, Microsoft Power Automate).
  </p>
 </div>
 
