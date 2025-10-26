@@ -579,8 +579,7 @@ Die am häufigsten gestellten Fragen der Community werden unten beantwortet
                 <i class="faq-icon bi bi-question-circle"></i>
               <h3>Generiert Watmonitor automatisch Quellcode für meine Hardware?</h3>
 <div class="faq-content">
-<p>Ja, Watmonitor generiert automatisch <strong>Quellcode-Skizzen</strong> für Ihre Hardware, einschließlich <strong>ESP32</strong> mit <strong>WiFi</strong>- oder <strong>PHY-Ethernet</strong>-Verbindung und unterstützten <strong>Ultraschallsensoren</strong>. Die generierten Skizzen enthalten das erforderliche <strong>MCU-Token</strong>, berechnen die Ablaufverfolgung zur Ziel-<strong>PHP-Datei</strong> und fügen automatisch Ihre Domäne hinzu (Hinweis: localhost funktioniert nicht – stellen Sie sicher, dass Sie eine zugängliche IP-Adresse oder einen zugänglichen Domänennamen verwenden). Das <strong>Root-CA-Zertifikat</strong> (für HTTPS-Verbindungen) wird nicht geändert, daher müssen Sie es manuell in die Skizze für den ESP32 einfügen.
-</p>
+<p>Ja, Watmonitor generiert automatisch <strong>Quellcode</strong> für <strong>ESP32</strong> mit <strong>WiFi und ULP</strong> für unterstützte <strong>Ultraschall- oder ToF-Lasersensoren</strong>. Der generierte Quellcode enthält das erforderliche <strong>MCU-Token</strong>, den Pfad (die Tiefe) zur Ziel-<strong>PHP-Datei</strong> und die Domänenadresse (Hinweis: localhost funktioniert nicht – stellen Sie sicher, dass Sie eine erreichbare IP-Adresse oder einen Domänennamen verwenden). Das <strong>Root-CA-Zertifikat</strong> (für HTTPS-Verbindungen) wird nicht bearbeitet, daher müssen Sie es manuell zum ESP32-Quellcode hinzufügen. Standardmäßig wird das Let's Encrypt Root CA ISRG Root X1-Zertifikat verwendet.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
