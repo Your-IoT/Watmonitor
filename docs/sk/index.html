@@ -600,8 +600,7 @@ Pre možnosť spúšťania <strong>PHP skriptov</strong> pre Watmonitor, musí s
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Vygeneruje Watmonitor automaticky zdrojový kód pre môj hardvér?</h3>
 <div class="faq-content">
- <p>Áno, Watmonitor automaticky vygeneruje <strong>sketch</strong> pre <strong>ESP32</strong> s <strong>WiFi</strong> alebo <strong>PHY Ethernet LAN8720</strong > pripojenie a podporované <strong>ultrazvukové senzory</strong>. Vygenerované sketche budú obsahovať potrebný <strong>token MCU</strong>, vypočítajú trace k cieľovému <strong>súboru PHP</strong> a automaticky pridajú vašu doménu (poznámka: localhost nebude fungovať – uistite sa, že používate prístupná adresa IP alebo názov domény). <strong>Certifikát koreňovej CA</strong> (pre pripojenia HTTPS) nie je automaticky vygenerovaný, takže ho budete musieť manuálne pridať do sketchu pre ESP32.
- </p>
+ <p>Áno, Watmonitor automaticky vygeneruje <strong>zdrojový kód</strong> pre <strong>ESP32</strong> s <strong>WiFi a ULP</strong> pre podporované <strong>ultrazvukové, alebo ToF laserové senzory</strong>. Vygenerované zdrojové kódy budú obsahovať potrebný <strong>MCU token</strong>, trasu (hĺbku) k cieľovému <strong>PHP súboru</strong>, adresu domény (poznámka: localhost nebude fungovať – uistite sa, že používate prístupnú IP adresu alebo názov domény). <strong>Certifikát koreňovej CA</strong> (pre pripojenia HTTPS) sa neupraví, takže ho budete musieť manuálne pridať do zdrojového kódu pre ESP32, predvolene sa používa certifikát Let's Encrypt Root CA ISRG Root X1.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
