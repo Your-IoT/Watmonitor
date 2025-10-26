@@ -574,8 +574,7 @@ La question la plus fréquemment posée par la communauté est répondue ci-dess
 <i class="faq-icon bi bi-question-circle"></i>
 <h3>Watmonitor générera-t-il automatiquement le code source de mon matériel ?</h3>
 <div class="faq-content">
-<p>Oui, Watmonitor générera automatiquement des <strong>esquisses de code source</strong> pour votre matériel, y compris <strong>ESP32</strong> avec <strong>WiFi</strong> ou Connexion Ethernet PHY et capteurs à ultrasons pris en charge. Les croquis générés incluront le jeton MCU nécessaire, calculeront la trace vers le fichier PHP cible et ajouteront automatiquement votre domaine (remarque : localhost ne fonctionnera pas ; assurez-vous d'utiliser une adresse IP ou un nom de domaine accessible). Le certificat CA racine (pour les connexions HTTPS) n'est pas modifié, vous devrez donc l'ajouter manuellement dans le croquis pour l'ESP32.
-</p>
+<p>Oui, Watmonitor génère automatiquement le code source pour ESP32 avec Wi-Fi et ULP pour les capteurs laser à ultrasons ou ToF pris en charge. Le code source généré contient le jeton MCU nécessaire, le chemin (profondeur) vers le fichier PHP cible et l'adresse de domaine (remarque : localhost ne fonctionnera pas ; assurez-vous d'utiliser une adresse IP ou un nom de domaine accessible). Le certificat d'autorité de certification racine (pour les connexions HTTPS) ne sera pas modifié. Vous devrez donc l'ajouter manuellement au code source ESP32. Par défaut, le certificat ISRG Root X1 de l'autorité de certification racine Let's Encrypt est utilisé.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
