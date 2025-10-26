@@ -407,9 +407,14 @@ Stránka <strong>Záznamy</strong> zobrazuje minimálne a maximálne hladiny vod
             <p class="fst-italic">
               Automaticky generovaný zdrojový kód pre ESP32 (Arduino IDE)
             </p>
-<p>
- <strong>Stránka programu</strong> dokáže vygenerovať <strong>zdrojový kód (sketch)</strong> pre IoT senzorový uzol na báze <strong>ESP32</strong> s podporou <strong>WiFi</strong> a <strong>PHY Ethernet LAN8720</strong> s <strong>FreeRTOS</strong> v závislosti od zvoleného protokolu (HTTP alebo HTTPS). 
-Systém automaticky nakonfiguruje trasy na nahrávanie údajov do Watmonitor vo vašej doméne (ku konkrétnemu .php súboru), zohľadní aj nastavený token. Tento zdrojový kód je kompatibilný s <strong>Arduino Core 3.0.X (2024)</strong>, umožňuje jednoduchú integráciu do zariadenia.
+<p> 
+<strong>Stránka programu</strong> ponúka predkonfigurované zdrojové kódy pre <strong>ESP32 mikrokontróler</strong> pre senzorové uzly s podporou <strong>Wi-Fi</strong> a <strong>režimu ULP</strong>. 
+Je možné využiť <strong>ultrazvukové</strong> (JSN-SR04T, HC-SR04), alebo <strong>laserové ToF</strong> (VL53L1X) snímače pre rýchlu integráciu s vlastnou inštanciou Watmonitora.
+</p>
+<p> 
+Generátor automaticky nakonfigure cestu pre odosielanie dát zo senzorového uzla na základe domény, aj hĺbky priečinka, kde je umiestnená webaplikácia Watmonitora. 
+Zdrojový kód sa konfiguruje na základe použitého protokolu (HTTPS pre zabezpečené pripojenie, alebo HTTP pre testovanie, localhost inštanciu). 
+Kód je kompatibilný s <strong>Arduino Core 3.X.X</strong> pre rýchlu a bezproblémovú integráciu hardvéru.
 </p>
 
           </div>
