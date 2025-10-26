@@ -588,8 +588,7 @@ O código é compatível com <strong>Arduino Core 3.X.X</strong> para integraç�
                 <i class="faq-icon bi bi-question-circle"></i>
                <h3>Existem códigos-fonte adicionais disponíveis além daqueles no aplicativo Watmonitor?</h3>
 <div class="faq-content">
-  <p>Sim, há vários <strong>códigos-fonte</strong> adicionais disponíveis no <strong>GitHub</strong> que são compatíveis com a interface Watmonitor. Eles incluem exemplos para <strong>Arduino</strong> com Ethernet (série ENC ou Wiznet), <strong>ESP8266</strong>, <strong>ESP32</strong> e outras tecnologias de transmissão, como <strong>LoRaWAN</strong> e <strong>Sigfox IoT</strong>. Você pode acessar esses códigos-fonte clicando no botão "Exemplos de nó de sensor" no topo desta página.
-  </p>
+<p>Sim, o Watmonitor gerará automaticamente o <strong>código-fonte</strong> para o <strong>ESP32</strong> com <strong>WiFi e ULP</strong> para sensores laser <strong>ultrassônicos ou ToF</strong> compatíveis. Os códigos-fonte gerados conterão o <strong>token MCU</strong> necessário, o caminho (profundidade) para o <strong>arquivo PHP</strong> de destino e o endereço de domínio (observação: o host local não funcionará — certifique-se de usar um endereço IP ou nome de domínio acessível). O <strong>certificado da CA raiz</strong> (para conexões HTTPS) não será editado, portanto, você terá que adicioná-lo manualmente ao código-fonte do ESP32. Por padrão, o certificado da CA raiz ISRG Root X1 da Let's Encrypt é usado.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
