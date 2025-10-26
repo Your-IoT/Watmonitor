@@ -390,8 +390,15 @@ La página de gráficos de Watmonitor permite a los usuarios visualizar y analiz
 <p class="fst-italic">
 Código fuente generado automáticamente para ESP32 (IDE de Arduino)
 </p>
-<p>
-La <strong>página del programa</strong> proporciona un <strong>código fuente</strong> generado previamente para los nodos de sensores de IoT basados ​​en la plataforma <strong>ESP32</strong>, compatible con la conectividad <strong>WiFi</strong> y <strong>PHY Ethernet</strong> con <strong>FreeRTOS</strong>, según el protocolo seleccionado (HTTP o HTTPS). El sistema configura automáticamente las rutas para cargar datos a Watmonitor en su dominio. Este código fuente es compatible con <strong>Arduino Core 3.0.X (2024)</strong>, lo que facilita la integración con su configuración de monitoreo de agua de IoT.
+<p> 
+La <strong>página del programa</strong> ofrece códigos fuente <strong>ESP32</strong> preconfigurados para nodos de sensores de IoT con 
+Compatibilidad con <strong>Wi-Fi</strong> y <strong>modo ULP</strong>. 
+Funciona con sensores <strong>ultrasónicos</strong> (JSN-SR04T, HC-SR04) o <strong>láser ToF</strong> (VL53L1X).
+</p>
+<p> 
+Todas las rutas a su instancia de <strong>Watmonitor</strong> se configuran automáticamente. 
+El código fuente se configura según el protocolo utilizado durante la visualización (HTTPS para conexión segura o HTTP para prueba, instancia de localhost). 
+El código es compatible con <strong>Arduino Core 3.X.X</strong> para una integración de hardware rápida y perfecta.
 </p>
 
           </div>
