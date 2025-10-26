@@ -386,8 +386,15 @@ La <strong>pagina dei grafici</strong> di Watmonitor consente agli utenti di vis
 <p class="fst-italic">
 Codice sorgente generato automaticamente per ESP32 (Arduino IDE)
 </p>
-<p>
-La <strong>pagina Programma</strong> fornisce <strong>codice sorgente</strong> pre-generato per i nodi sensore IoT basati sulla piattaforma <strong>ESP32</strong>, supportando sia la connettività <strong>WiFi</strong> che <strong>PHY Ethernet</strong> con <strong>FreeRTOS</strong>, a seconda del protocollo selezionato (HTTP o HTTPS). Il sistema configura automaticamente i percorsi per caricare i dati su Watmonitor sul tuo dominio. Questo codice sorgente è compatibile con <strong>Arduino Core 3.0.X (2024)</strong>, semplificando l'integrazione con la configurazione di monitoraggio dell'acqua IoT.
+<p> 
+La <strong>pagina Programma</strong> offre codici sorgente <strong>ESP32</strong> preconfigurati per nodi sensore IoT con 
+Supporto <strong>Wi-Fi</strong> e <strong>modalità ULP</strong>. 
+Funziona con sensori <strong>ultrasonici</strong> (JSN-SR04T, HC-SR04) o <strong>laser ToF</strong> (VL53L1X).
+</p>
+<p> 
+Tutti i percorsi verso la tua istanza <strong>Watmonitor</strong> vengono configurati automaticamente. 
+Il codice sorgente viene configurato in base al protocollo utilizzato durante la visualizzazione (HTTPS per connessione protetta o HTTP per test, istanza localhost). 
+Il codice è compatibile con <strong>Arduino Core 3.X.X</strong> per un'integrazione hardware rapida e senza interruzioni.
 </p>
 
           </div>
