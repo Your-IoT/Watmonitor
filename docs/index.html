@@ -587,8 +587,7 @@ Watmonitor allows instant access to the latest sensor data by scanning a QR code
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Will Watmonitor automatically generate source code for my hardware?</h3>
 <div class="faq-content">
-  <p>Yes, Watmonitor will automatically generate <strong>source code sketches</strong> for your hardware, including <strong>ESP32</strong> with <strong>WiFi</strong> or <strong>PHY Ethernet</strong> connection and supported <strong>ultrasonic sensors</strong>. The generated sketches will include the necessary <strong>MCU token</strong>, calculate the trace to the target <strong>PHP file</strong>, and automatically add your domain (note: localhost will not work—ensure you use an accessible IP or domain name). The <strong>Root CA certificate</strong> (for HTTPS connections) is not modified, so you will need to manually add it into the sketch for the ESP32.
-  </p>
+  <p>Yes, Watmonitor will automatically generate <strong>source code sketches</strong> for <strong>ESP32</strong> with <strong>WiFi and ULP</strong> and supported <strong>ultrasonic or ToF laser sensors</strong>. The generated sketches will include the necessary <strong>MCU token</strong>, calculate the trace to the target <strong>PHP file</strong>, and automatically add your domain (note: localhost will not work—ensure you use an accessible IP or domain name). The <strong>Root CA certificate</strong> (for HTTPS connections) is not modified, so you will need to manually add it into the sketch for the ESP32, default used is Let's Encrypt Root CA certificate ISRG Root X1.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
