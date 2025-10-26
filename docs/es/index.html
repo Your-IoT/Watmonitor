@@ -581,8 +581,7 @@ Las preguntas más frecuentes de la comunidad se responden a continuación
                 <i class="faq-icon bi bi-question-circle"></i>
                <h3>¿Watmonitor generará automáticamente el código fuente para mi hardware?</h3>
 <div class="faq-content">
-<p>Sí, Watmonitor generará automáticamente <strong>bosquejos de código fuente</strong> para su hardware, incluido <strong>ESP32</strong> con conexión <strong>WiFi</strong> o <strong>PHY Ethernet</strong> y <strong>sensores ultrasónicos</strong> compatibles. Los bosquejos generados incluirán el <strong>token MCU</strong> necesario, calcularán el seguimiento hasta el <strong>archivo PHP</strong> de destino y agregarán automáticamente su dominio (nota: localhost no funcionará; asegúrese de usar una IP o un nombre de dominio accesibles). El <strong>certificado de CA raíz</strong> (para conexiones HTTPS) no se modifica, por lo que deberá agregarlo manualmente al bosquejo para el ESP32.
-</p>
+<p>Sí, Watmonitor generará automáticamente el código fuente para el ESP32 con Wi-Fi y ULP para los sensores láser ultrasónicos o ToF compatibles. El código fuente generado contendrá el token MCU necesario, la ruta (profundidad) al archivo PHP de destino y la dirección de dominio (nota: localhost no funcionará; asegúrese de usar una dirección IP o un nombre de dominio accesibles). El certificado de CA raíz (para conexiones HTTPS) no se editará, por lo que deberá agregarlo manualmente al código fuente del ESP32. Por defecto, se utiliza el certificado ISRG Root X1 de Let's Encrypt Root CA.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
