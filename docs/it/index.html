@@ -577,8 +577,7 @@ Questa pagina consente agli utenti di immettere le <strong>dimensioni del pozzo 
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Watmonitor genererà automaticamente il codice sorgente per il mio hardware?</h3>
 <div class="faq-content">
-<p>Sì, Watmonitor genererà automaticamente <strong>schizzi di codice sorgente</strong> per il tuo hardware, incluso <strong>ESP32</strong> con connessione <strong>WiFi</strong> o <strong>PHY Ethernet</strong> e <strong>sensori a ultrasuoni</strong> supportati. Gli schizzi generati includeranno il <strong>token MCU</strong> necessario, calcoleranno la traccia per il <strong>file PHP</strong> di destinazione e aggiungeranno automaticamente il tuo dominio (nota: localhost non funzionerà, assicurati di utilizzare un IP o un nome di dominio accessibile). Il <strong>certificato CA radice</strong> (per connessioni HTTPS) non viene modificato, quindi dovrai aggiungerlo manualmente nello schizzo per ESP32.
-</p>
+<p>Sì, Watmonitor genererà automaticamente il <strong>codice sorgente</strong> per <strong>ESP32</strong> con <strong>WiFi e ULP</strong> per i <strong>sensori laser a ultrasuoni o ToF</strong> supportati. Il codice sorgente generato conterrà il <strong>token MCU</strong> necessario, il percorso (profondità) al <strong>file PHP</strong> di destinazione e l'indirizzo di dominio (nota: localhost non funzionerà: assicurati di utilizzare un indirizzo IP o un nome di dominio accessibile). Il <strong>certificato CA radice</strong> (per le connessioni HTTPS) non verrà modificato, quindi dovrai aggiungerlo manualmente al codice sorgente di ESP32. Per impostazione predefinita, viene utilizzato il certificato ISRG Root X1 della CA radice di Let's Encrypt.</p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
