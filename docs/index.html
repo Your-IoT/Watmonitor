@@ -671,7 +671,13 @@ Extendable with webhooks for automation (Zapier, IFTTT, n8n, Microsoft Power Aut
                 <i class="faq-icon bi bi-question-circle"></i>
 <h3>How Does the IoT Sensor Node Perform Measurement?</h3>
 <div class="faq-content">
-  <p>The IoT sensor node, powered by <strong>Arduino</strong> or <strong>ESP32</strong>, measures distance using an <strong>ultrasonic sensor</strong> with the Time-of-Flight (ToF) method. It sends a HIGH voltage pulse to the Trigger pin of the ultrasonic sensor for 10 μs and then measures the time it takes to detect a HIGH voltage signal on the Echo pin. Using the speed of sound, the sensor calculates the distance in centimeters with high precision. This efficient process ensures accurate distance measurement for IoT applications.</p>
+  <p>
+    The IoT sensor node, measures distance using the 
+    <strong>Time-of-Flight (ToF)</strong> principle. With an <strong>ultrasonic sensor</strong>, it sends a short trigger pulse 
+    and measures the time for the echo to return. With a <strong>laser ToF sensor</strong>, 
+    it emits light pulses and calculates distance from the reflected signal’s travel time. Both methods deliver 
+    <strong>comparable measurements</strong> suitable for IoT applications.
+  </p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
@@ -681,7 +687,12 @@ Extendable with webhooks for automation (Zapier, IFTTT, n8n, Microsoft Power Aut
 <i class="faq-icon bi bi-question-circle"></i>
 <h3>What does the callback look like on Watmonitor?</h3>
 <div class="faq-content">
-<p>To write data to Watmonitor, you must use the HTTP request (port 80, or another if it is local hosting) / HTTPS (port 443) POST method to the target host and the data.php file (for example https://hladinomer.eu/data.php). The message parameters are "hodnota" - the water level in centimeters (data type INT) and "token", which represents the authorization token. If the write is successful, you will receive an HTTP 200 header in the server response and also an OK text output. Note: Enter the parameters without quotes.</p>
+  <p>
+    To send data to Watmonitor, make an HTTP POST request to the host's <code>data.php</code> file 
+    (e.g., <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>) using port 80 or 443. 
+    Include two parameters: <code>hodnota</code> (water level in cm, INT) and <code>token</code> (authorization). 
+    A successful write returns an HTTP 200 response with <strong>OK</strong>. Parameters should be sent without quotes.
+  </p>
 </div>
 <i class="faq-toggle bi bi-chevron-right"></i>
 </div><!-- End Faq item-->
