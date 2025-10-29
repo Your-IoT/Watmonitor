@@ -649,9 +649,13 @@ Erweiterbar mit Webhooks für die Automatisierung (Zapier, IFTTT, n8n, Microsoft
 
                             <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Wie ist die Kommunikation zwischen dem Server und dem Arduino / ESP32-Sensorknoten?</h3>
+<h3>Wie wird die Kommunikation zwischen Server und Sensorknoten hergestellt?</h3>
 <div class="faq-content">
- <p>Der Sensorknoten führt alle 5 Minuten eine periodische Wasserstandsmessung durch. Anschließend stellt er über das HTTP- oder HTTPS-Protokoll mit einer POST-Anfrage eine Anfrage an den Webserver. Informationen zum Wasserstand werden in den Bericht eingestreut. Nach Erhalt der Nachricht speichert der WEbserver diese Daten in der MySQL-Datenbank und kann sie sofort in der Wasserstandsmesser-Webanwendung (Watmonitora) visualisieren. </p>
+<p>
+Der <strong>Sensorknoten</strong> kommuniziert über <strong>HTTP oder HTTPS</strong> mit dem Webserver.
+In regelmäßigen Abständen (z. B. alle 5 Minuten) misst er den Wasserstand und sendet ihn per <strong>POST-Anfrage</strong>. 
+Der Server speichert die Daten in einer MySQL-Datenbank, wodurch die Visualisierung der Wasserstände über die Webanwendung <strong>Watmonitor</strong> und die zuverlässige Überwachung von Trends ermöglicht werden.
+</p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -659,18 +663,26 @@ Erweiterbar mit Webhooks für die Automatisierung (Zapier, IFTTT, n8n, Microsoft
 
                             <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Wie wird die Messung durch den Sensor-IoT-Knoten durchgeführt?</h3>
+<h3>Wie misst der IoT-Sensorknoten?</h3>
 <div class="faq-content">
- <p>Ein Sensorknoten auf Basis von Arduino oder ESP32 misst die Distanz mithilfe eines Ultraschallsensors mit der Time-of-Flight-Methode. Er sendet für 10 μs einen HIGH-Spannungspegel an den TRIGGER-Pin des Ultraschallsensors. Anschließend zählt er die Zeit, bis ein HIGH-Spannungspegel am ECHO-Pin des Ultraschallsensors erkannt wird. Basierend auf der Schallgeschwindigkeit wird die endgültige Distanz in Zentimetern berechnet.</p>
+<p>
+Der IoT-Sensorknoten misst Entfernungen mithilfe des <strong>Time-of-Flight (ToF)</strong>-Prinzips. 
+Bei einem <strong>Ultraschallsensor</strong> sendet er einen kurzen Triggerimpuls aus und misst die Laufzeit des Echos. Bei einem <strong>Laser-ToF-Sensor</strong> sendet er Lichtimpulse aus und berechnet die Entfernung anhand der Laufzeit des reflektierten Signals. Beide Methoden liefern <strong>vergleichbare Messwerte</strong>, die für IoT-Anwendungen geeignet sind.
+</p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
  <i class="faq-icon bi bi-question-circle"></i>
-<h3>Wie sieht ein Rückruf auf Watmonitor aus?</h3>
+<h3>Wie sieht der Callback auf Watmonitor aus?</h3>
 <div class="faq-content">
- <p>Um Daten in Watmonitor zu schreiben, müssen Sie eine HTTP-Anforderung (Port 80 oder ein anderer, wenn es sich um lokales Hosting handelt) / HTTPS (Port 443) POST-Methode an den Zielhost und die Datei data.php verwenden (z. B. https://hladinomer.eu/data.php). Die Nachrichtenparameter sind "hodnota" – die Füllhöhe in Zentimetern (Datentyp INT) und "token", welches den Autorisierungstoken darstellt. Bei erfolgreicher Registrierung erhalten Sie in der Serverantwort einen HTTP 200-Header sowie eine OK-Textausgabe. Hinweis: Geben Sie Parameter ohne Anführungszeichen ein.</p>
+<p>
+Um Daten an Watmonitor zu senden, senden Sie eine HTTP-POST-Anfrage an die Datei <code>data.php</code> des Hosts.
+(z. B. <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>) über Port 80 oder 443.
+Fügen Sie zwei Parameter hinzu: <code>hodnota</code> (Wasserstandsdifferenz in cm, INT) und <code>token</code> (Autorisierung).
+Bei erfolgreichem Schreiben erhalten Sie eine HTTP-200-Antwort mit <strong>OK</strong>.
+</p>
 </div>
  <i class="faq-toggle bi bi-chevron-right"></i>
  </div><!-- Ende des FAQ-Elements-->
