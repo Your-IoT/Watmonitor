@@ -658,9 +658,14 @@ Extendable with webhooks for automation (Zapier, IFTTT, n8n, Microsoft Power Aut
 
                             <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>How is Communication Established Between the Server and the Arduino/ESP32 Sensor Node?</h3>
+<h3>How is Communication Established Between the Server and Sensor Node?</h3>
 <div class="faq-content">
-  <p><strong>Arduino/ESP32 sensor node communicates</strong> with the webserver using <strong>HTTP or HTTPS protocols</strong>. Every 5 minutes, the sensor node measures the water level and sends the data via a <strong>POST request</strong>. This request includes detailed water level information. Upon receiving the data, the webserver stores it in a MySQL database, enabling instant visualization of water levels through the <strong>Watmonitor</strong> web application. This ensures real-time monitoring and efficient data management.</p>
+  <p>
+    The <strong>sensor node</strong> communicates with the webserver via <strong>HTTP or HTTPS</strong>. 
+    At regular intervals (e.g., every 5 minutes), it measures the water level and sends it using a 
+    <strong>POST request</strong>. The server stores the data in a MySQL database, allowing visualization 
+    of water levels through the <strong>Watmonitor</strong> web application and reliable monitoring of trends.
+  </p>
 </div>
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
@@ -691,7 +696,7 @@ Extendable with webhooks for automation (Zapier, IFTTT, n8n, Microsoft Power Aut
     To send data to Watmonitor, make an HTTP POST request to the host's <code>data.php</code> file 
     (e.g., <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>) using port 80 or 443. 
     Include two parameters: <code>hodnota</code> (water level in cm, INT) and <code>token</code> (authorization). 
-    A successful write returns an HTTP 200 response with <strong>OK</strong>. Parameters should be sent without quotes.
+    A successful write returns an HTTP 200 response with <strong>OK</strong>.
   </p>
 </div>
 <i class="faq-toggle bi bi-chevron-right"></i>
