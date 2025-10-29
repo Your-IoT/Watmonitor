@@ -670,17 +670,24 @@ Možnosť rozšírenia o webhooky na automatizáciu (Zapier, IFTTT, n8n, Microso
 
               <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Ako prebieha komunikácia medzi serverom a senzorovým uzlom Arduino / ESP32?</h3>
+<h3>Ako sa nadväzuje komunikácia medzi serverom a senzorovým uzlom?</h3>
 <div class="faq-content">
- <p>Senzorový uzol vykonáva periodicky merania hladinu vody každých 5 minút. Následne vykoná request na webserver skrz HTTP, alebo HTTPS protokol POST požiadavkou. Do správy je zapuzdrená informácia o hladine vody a autorizačný token. Webserver po prijatí správy uloží dáta do MySQL databázy a okamžite ich vie vizualizovať vo webaplikácii hladinomera (Watmonitora) používateľovi. </p>
+<p>
+<strong>Senzorový uzol</strong> komunikuje s webovým serverom prostredníctvom protokolu <strong>HTTP alebo HTTPS</strong>. 
+V pravidelných intervaloch (štandardne 5 minút) meria hladinu vody a odosiela ju pomocou <strong>POST požiadavky</strong>. 
+Server ukladá údaje do databázy MySQL, čo umožňuje vizualizáciu hladiny vody prostredníctvom webovej aplikácie <strong>Watmonitor</strong>.</p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
                                <div class="faq-item">
                 <i class="faq-icon bi bi-question-circle"></i>
-<h3>Ako prebieha meranie senzorovým IoT uzlom?</h3>
+<h3>Ako vykonáva meranie uzol senzora IoT?</h3>
 <div class="faq-content">
- <p>Senzorový uzol na báze Arduina alebo ESP32 meria vzdialenosť pomocou ultrazvukového senzora s metódou Time-of-Flight. Na Trigger pin ultrazvukového snímača nastaví na 10 μs HIGH úroveň napätia, čím vyšle ultrazvukový pulz. Začne počítať čas, pokým sa na pine Echo ultrazvukového snímača neobjaví napäťová úroveň HIGH po prijatí ultrazvuku. Na základe rýchlosti zvuku sa vypočíta konečná vzdialenosť v centimetroch.</p>
+<p>
+Uzol senzora IoT meria vzdialenosť princípom <strong>Time-of-Flight (ToF)</strong>. 
+Ak používa <strong>ultrazvukový senzor</strong>, vysiela krátky trigger impulz a meria čas návratu ozveny (Echo). 
+V prípade využitia <strong>laserového ToF senzora</strong> vysiela svetelné impulzy a počíta vzdialenosť z času príchodu odrazeného svetla. 
+Obe metódy poskytujú <strong>porovnateľné meranie</strong>, vhodné pre aplikácie IoT. </p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -689,7 +696,10 @@ Možnosť rozšírenia o webhooky na automatizáciu (Zapier, IFTTT, n8n, Microso
                 <i class="faq-icon bi bi-question-circle"></i>
 <h3>Ako vyzerá callback na Watmonitor?</h3>
 <div class="faq-content">
- <p>Pre zápis dát do Watmonitora musíte použiť request HTTP (port 80, prípadne aj iný ak ide o lokálny hosting) / HTTPS (port 443) POST metódu na cieľový host a súbor data.php (vzorovo https://hladinomer.eu/data.php). Parametrami správy je "hodnota" - výška hladiny v centrimetroch (dátový typ INT) a "token", čo reprezentuje autorizačný token. Pri úspešnom zápise získate v odpovedi servera hlavičku HTTP 200 a tiež textový výstup OK. Poznámka: Parametre zadávajte bez úvodzoviek.</p>
+<p>
+Ak chcete odoslať dáta do Watmonitora, potrebujete použiť požiadavku HTTP POST smerovanú na subor <code>data.php</code> Watmonitora (napr. <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>), môžete využiť port 80, alebo 443. 
+Zahrňte dva parametre: <code>hodnota</code> (rozdiel hladiny vody v cm, INT) a <code>token</code> (autorizácia). Úspešný zápis vráti odpoveď HTTP 200 s <strong>OK</strong>. 
+</p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
