@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+t<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -681,10 +681,11 @@ Bei einem <strong>Ultraschallsensor</strong> sendet er einen kurzen Triggerimpul
 <h3>Wie sieht der Callback auf Watmonitor aus?</h3>
 <div class="faq-content">
 <p>
-Um Daten an Watmonitor zu senden, senden Sie eine HTTP-POST-Anfrage an die Datei <code>data.php</code> des Hosts.
-(z. B. <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>) über Port 80 oder 443.
-Fügen Sie zwei Parameter hinzu: <code>hodnota</code> (Wasserstandsdifferenz in cm, INT) und <code>token</code> (Autorisierung).
-Bei erfolgreichem Schreiben erhalten Sie eine HTTP-200-Antwort mit <strong>OK</strong>.
+Um Daten an Watmonitor zu senden, senden Sie eine HTTP-POST-Anfrage an die Datei data.php des Hosts (z. B.: https://hladinomer.eu/data.php) über Port 80 oder 443. Geben Sie zwei Parameter an:
+"hodnota" (Wasserstandsdifferenz in cm, INT) und
+"token" (Autorisierung).
+Die Anfrage muss den Header Content-Type: application/x-www-form-urlencoded enthalten.
+Bei erfolgreicher Übertragung erhalten Sie die HTTP-200-Antwort mit dem Statuscode OK.
 </p>
 </div>
  <i class="faq-toggle bi bi-chevron-right"></i>
