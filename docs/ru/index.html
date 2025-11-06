@@ -690,9 +690,14 @@ Watmonitor позволяет мгновенно получать актуаль
 <h3>Как выглядит обратный вызов в Watmonitor?</h3>
 <div class="faq-content">
 <p>
-Чтобы отправить данные в Watmonitor, отправьте HTTP-запрос POST к файлу <code>data.php</code> на хосте
-(например, <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>), используя порт 80 или 443.
-Укажите два параметра: <code>hodnota</code> (разница уровня воды в см, INT) и <code>token</code> (авторизация).
+Чтобы отправить данные в Watmonitor, выполните HTTP-запрос POST к файлу
+<code>data.php</code> на хосте (например,
+<a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>)
+через порт 80 или 443. Укажите два параметра:
+<code>hodnota</code> (разница уровня воды в см, INT) и
+<code>token</code> (авторизация).
+Запрос должен включать заголовок
+<code>Content-Type: application/x-www-form-urlencoded</code>.
 Успешная запись возвращает ответ HTTP 200 с кодом <strong>OK</strong>.
 </p>
 </div>
