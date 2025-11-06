@@ -675,7 +675,17 @@ Estendibile con webhook per l'automazione (Zapier, IFTTT, n8n, Microsoft Power A
  <i class="faq-icon bi bi-question-circle"></i>
 <h3>Come appare un callback su Watmonitor?</h3>
 <div class="contenuto-faq">
- <p>Per scrivere dati su Watmonitor, è necessario utilizzare un metodo POST di richiesta HTTP (porta 80 o un'altra se si tratta di hosting locale) / HTTPS (porta 443) all'host di destinazione e al file data.php (ad esempio https://hladinomer.eu/data.php). I parametri del messaggio sono "hodnota", ovvero l'altezza del livello in centimetri (tipo di dati INT) e "token", che rappresenta il token di autorizzazione. Una volta completata la registrazione, riceverai un'intestazione HTTP 200 nella risposta del server e anche un output di testo OK. Nota: immettere i parametri senza virgolette.</p>
+<p>
+Per inviare dati a Watmonitor, effettuare una richiesta HTTP POST al file
+<code>data.php</code> dell'host (ad esempio,
+<a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>)
+utilizzando la porta 80 o 443. Includere due parametri:
+<code>hodnota</code> (differenza di livello dell'acqua in cm, INT) e
+<code>token</code> (autorizzazione).
+La ​​richiesta deve includere l'intestazione
+<code>Content-Type: application/x-www-form-urlencoded</code>.
+Una scrittura riuscita restituisce una risposta HTTP 200 con <strong>OK</strong>.
+</p>
 </div>
  <i class="faq-toggle bi bi-chevron-right"></i>
  </div><!-- Fine elemento Faq-->
