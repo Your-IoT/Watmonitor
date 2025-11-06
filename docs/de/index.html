@@ -682,9 +682,9 @@ Bei einem <strong>Ultraschallsensor</strong> sendet er einen kurzen Triggerimpul
 <div class="faq-content">
 <p>
 Um Daten an Watmonitor zu senden, senden Sie eine HTTP-POST-Anfrage an die Datei data.php des Hosts (z. B.: https://hladinomer.eu/data.php) über Port 80 oder 443. Geben Sie zwei Parameter an:
-"hodnota" (Wasserstandsdifferenz in cm, INT) und
-"token" (Autorisierung).
-Die Anfrage muss den Header Content-Type: application/x-www-form-urlencoded enthalten.
+<code>hodnota</code> (Wasserstandsdifferenz in cm, INT) und
+<code>token</code> (Autorisierung).
+Die Anfrage muss den Header <code>Content-Type: application/x-www-form-urlencoded</code> enthalten.
 Bei erfolgreicher Übertragung erhalten Sie die HTTP-200-Antwort mit dem Statuscode OK.
 </p>
 </div>
