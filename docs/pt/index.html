@@ -671,7 +671,16 @@ Extensível com webhooks para automação (Zapier, IFTTT, n8n, Microsoft Power A
                 <i class="faq-icon bi bi-question-circle"></i>
 <h3>Como é um retorno de chamada no Watmonitor?</h3>
 <div class="faq-content">
- <p>Para gravar dados no Watmonitor, você deve usar uma solicitação HTTP (porta 80 ou outra se for hospedagem local) / método POST HTTPS (porta 443) para o host de destino e o arquivo data.php (por exemplo https://hladinomer.eu/data.php). Os parâmetros da mensagem são "hodnota" - a altura do nível em centímetros (tipo de dados INT) e "token", que representa o token de autorização. Após o registro bem-sucedido, você receberá um cabeçalho HTTP 200 na resposta do servidor e também uma saída de texto OK. Nota: Insira os parâmetros sem aspas.</p>
+<p>
+Para enviar dados ao Watmonitor, faça uma requisição HTTP POST para o arquivo <code>data.php</code> do host (por exemplo,
+<a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>)
+usando a porta 80 ou 443. Inclua dois parâmetros:
+<code>hodnota</code> (diferença de nível da água em cm, INT) e
+<code>token</code> (autorização).
+A requisição deve incluir o cabeçalho
+<code>Content-Type: application/x-www-form-urlencoded</code>.
+Uma gravação bem-sucedida retorna uma resposta HTTP 200 com <strong>OK</strong>.
+</p>
 </div>
  <i class="faq-toggle bi bi-chevron-right"></i>
  </div><!-- Fim do item de perguntas frequentes-->
