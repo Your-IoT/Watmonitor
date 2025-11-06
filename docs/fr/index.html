@@ -668,7 +668,16 @@ Extensible avec des webhooks pour l'automatisation (Zapier, IFTTT, n8n, Microsof
  <i class="faq-icon bi bi-question-circle"></i>
 <h3>À quoi ressemble un rappel sur Watmonitor ?</h3>
 <div class="faq-content">
- <p>Pour écrire des données sur Watmonitor, vous devez utiliser une requête HTTP (port 80, ou autre s'il s'agit d'un hébergement local) / HTTPS (port 443) méthode POST vers l'hôte cible et le fichier data.php (par exemple https://hladinomer.eu/data.php). Les paramètres du message sont "hodnota" - la hauteur du niveau en centimètres (type de données INT) et "token", qui représente le jeton d'autorisation. Une fois l'inscription réussie, vous recevrez un en-tête HTTP 200 dans la réponse du serveur ainsi qu'une sortie texte OK. Remarque : saisissez les paramètres sans guillemets.</p>
+<p>
+Pour envoyer des données à Watmonitor, effectuez une requête HTTP POST vers le fichier <code>data.php</code> de l'hôte (par exemple :
+<a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>)
+en utilisant le port 80 ou 443. Incluez deux paramètres :
+<code>hodnota</code> (différence de niveau d'eau en cm, entier) et
+<code>token</code> (autorisation).
+La requête doit inclure l'en-tête suivant :
+<code>Content-Type: application/x-www-form-urlencoded</code>.
+Une écriture réussie renvoie une réponse HTTP 200 avec <strong>OK</strong>.
+</p>
 </div>
  <i class="faq-toggle bi bi-chevron-right"></i>
  </div><!-- Fin de l'article FAQ-->
