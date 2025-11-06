@@ -699,9 +699,10 @@ Obe metódy poskytujú <strong>porovnateľné meranie</strong>, vhodné pre apli
 <h3>Ako vyzerá callback na Watmonitor?</h3>
 <div class="faq-content">
 <p>
-Ak chcete odoslať dáta do Watmonitora, potrebujete použiť požiadavku HTTP POST smerovanú na subor <code>data.php</code> Watmonitora (napr. <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>), môžete využiť port 80, alebo 443. 
-Zahrňte dva parametre: <code>hodnota</code> (rozdiel hladiny vody v cm, INT) a <code>token</code> (autorizácia). Úspešný zápis vráti odpoveď HTTP 200 s <strong>OK</strong>. 
-</p>
+Ak chcete odoslať dáta do Watmonitora, odošlite HTTP POST požiadavku do súboru hostiteľa <code>data.php</code> (napr. <a href="https://hladinomer.eu/data.php">https://hladinomer.eu/data.php</a>) pomocou portu 80 alebo 443. 
+  Zahrňte dva parametre: <code>hodnota</code> (rozdiel hladiny vody v cm, INT) a <code>token</code> (autorizácia). 
+  Požiadavka musí obsahovať hlavičku <code>Content-Type: application/x-www-form-urlencoded</code>. 
+  Úspešný zápis vráti odpoveď HTTP 200 s <strong>OK</strong>. </p>
 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
