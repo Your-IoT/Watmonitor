@@ -178,7 +178,7 @@
         <h2>Watmonitor - webové rozhranie hladinomera</h2>
         <p style="text-align: justify;">
   Watmonitor je centralizovaná webová aplikácia na <strong>vizualizáciu hladiny kvapalín</strong>, či výšky <strong>sypkých materiálov</strong>. 
-  Umožňuje pripojenie senzorových uzlov cez API a ukladanie dát do databázy, integráciu dát do iných plaforiem.
+  Určená pre vlastný hosting (on-premise). Umožňuje pripojenie senzorových uzlov cez API a ukladanie dát do databázy, integráciu dát do iných plaforiem.
   Vďaka intuitívnemu rozhraniu možno sledovať aktuálnu hladinu a objem v reálnom čase vrátane vývoja meraní (stúpa, klesá) a stavu pripojenia senzorového uzla.
         </p>
         <h3>Kľúčové funkcie</h3>
@@ -223,8 +223,7 @@ Riešenie je určené na sledovanie vody, oleja, paliva, lepidla, biomasy, pelie
               <i class="bi bi-clipboard-check"></i>
               <h3>Podporované senzory</h3>
               <p style="text-align: justify;">
-                Webové rozhranie je univerzálne – nerozlišuje, z akého senzora získava dáta.
-                Podporovaný je akýkoľvek senzor, pre ktorý si prispôsobíte firmvér.
+                Webové rozhranie je univerzálne – nerozlišuje, z akého senzora získava dáta. Môžete využiť akýkoľvek senzor pre rozdielové, či celkové meranie hladiny vody.
                 Pre hotové priemyselné senzorové riešenie stačí nastaviť callback na API Watmonitora pre zapisovanie dát, viz FAQ.
               </p>
             </div>
@@ -249,10 +248,9 @@ Riešenie je určené na sledovanie vody, oleja, paliva, lepidla, biomasy, pelie
               <i class="bi bi-qr-code-scan"></i>
               <h3>QR / AR funkcie</h3>
               <p style="text-align: justify;">
-                Watmonitor vám umožní okamžitý prístup k najnovším dátam zo senzorov – stačí jednoducho naskenovať QR kód
-                mobilným telefónom. Dáta je možné zobraziť ako statickú vizualizáciu alebo v
-                <strong>rozšírenej realite (AR)</strong> s orbitálnou scénou a pevnou vzdialenosťou kamery,
-                čo prináša interaktívnejší zážitok. Využívajú JSON endpoint Watmonitora.
+                Watmonitor je kompatibilný s dvoma podaplikáciami, ktoré umožňujú vizualizáciu posledných dát.
+                Stačí jednoducho naskenovať QR kód mobilným telefónom. Dáta je možné zobraziť formou <strong>statickej vizualizácie</strong>, 
+                alebo v <strong>rozšírenej realite (AR orbitálna scéna)</strong>. Využíva JSON endpoint Watmonitora.
                        <center>
        <img src="https://i.imgur.com/26qSq0y.png" alt="Watmonitor QR code" width="128px" height="128px">
        </center>
