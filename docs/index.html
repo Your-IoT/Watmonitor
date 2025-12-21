@@ -137,11 +137,10 @@
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
             <h2>IoT Water level monitoring with <span>Watmonitor webapp</span></h2>
             <p>For households, industry, IoT enthusiasts</p>
-            <p id="timer"></p>
             <div class="d-flex">
               <a href="https://hladinomer.eu/?lang=en" class="btn btn-primary rounded-pill">Try Watmonitor</a>
               <a href="https://github.com/martinius96/hladinomer-studna-scripty/tree/master/examples/Hladinomer/HTTPS" class="btn btn-info rounded-pill">Sensor node examples</a>
-              <a href="https://www.upwork.com/services/product/development-it-watmonitor-limited-offer-only-first-3-people-1881431049001406449" class="btn btn-success rounded-pill">Buy</a>
+              <a href="https://www.upwork.com/services/product/development-it-watmonitor-limited-offer-only-first-3-people-1881431049001406449" class="btn btn-success rounded-pill">Buy - SALE</a>
              </div>
           </div>
 
@@ -821,32 +820,6 @@ Extendable with webhooks for automation (Kafka, IFTTT, n8n, Microsoft Power Auto
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-<script>
-  // Nastavíme cieľový dátum
-  const targetDate = new Date("December 21, 2025 00:00:00").getTime();
-
-  // Funkcia pre aktualizáciu odpočtu každú sekundu
-  const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      clearInterval(countdown);
-      document.getElementById("timer").innerHTML = "Čas vypršal!";
-      return;
-    }
-
-    // Vypočítame dni, hodiny, minúty a sekundy
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Zobrazíme odpočet
-    document.getElementById("timer").innerHTML =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-  }, 1000);
-</script>
 </body>
 
 </html>
